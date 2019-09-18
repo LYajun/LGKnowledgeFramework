@@ -1,0 +1,6 @@
+framework module YJTaskMark {
+  umbrella header "YJTaskMark-umbrella.h"
+
+  export *
+  module * { export * }
+}

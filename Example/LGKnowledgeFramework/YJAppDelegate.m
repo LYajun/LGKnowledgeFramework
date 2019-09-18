@@ -7,12 +7,17 @@
 //
 
 #import "YJAppDelegate.h"
-
+#import <YJTaskMark/YJSpeechManager.h>
+#import <YJNetManager/YJNetMonitoring.h>
 @implementation YJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[YJNetMonitoring shareMonitoring] startNetMonitoring];
+    [[YJSpeechManager defaultManager] initEngine];
+    
+    
+    [[YJNetMonitoring shareMonitoring] checkNetCanUseWithComplete:nil];
     return YES;
 }
 

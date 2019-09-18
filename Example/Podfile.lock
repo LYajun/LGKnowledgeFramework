@@ -1,0 +1,143 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - LGAlertHUD (1.0.8):
+    - LGAlertHUD/AlertView (= 1.0.8)
+    - Masonry
+    - YJExtensions
+  - LGAlertHUD/AlertView (1.0.8):
+    - Masonry
+    - YJExtensions
+  - LGKnowledgeFramework (1.0.0):
+    - LGAlertHUD
+    - Masonry
+    - MJExtension
+    - YJBaseModule
+    - YJExtensions
+    - YJNetManager
+    - YJPresentAnimation
+    - YJTaskMark
+    - YJUtils
+  - LGLog (1.0.2):
+    - LGLog/LGLogManager (= 1.0.2)
+    - LGLog/YJCocoaLumberjack (= 1.0.2)
+  - LGLog/LGLogManager (1.0.2):
+    - LGLog/YJCocoaLumberjack
+  - LGLog/YJCocoaLumberjack (1.0.2)
+  - Masonry (1.1.0)
+  - MJExtension (3.1.2)
+  - MJRefresh (3.2.0)
+  - Reachability (3.2)
+  - TFHpple (2.0.0)
+  - YJActivityIndicatorView (1.0.0)
+  - YJBaseModule (1.1.6):
+    - YJBaseModule/Base (= 1.1.6)
+    - YJBaseModule/Manager (= 1.1.6)
+    - YJBaseModule/MarqueeLabel (= 1.1.6)
+    - YJBaseModule/YJBHpple (= 1.1.6)
+    - YJBaseModule/YJBWebView (= 1.1.6)
+  - YJBaseModule/Base (1.1.6):
+    - LGAlertHUD
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - YJActivityIndicatorView
+    - YJBaseModule/Manager
+    - YJExtensions
+  - YJBaseModule/Manager (1.1.6):
+    - YJExtensions
+  - YJBaseModule/MarqueeLabel (1.1.6)
+  - YJBaseModule/YJBHpple (1.1.6)
+  - YJBaseModule/YJBWebView (1.1.6):
+    - Masonry
+    - YJBaseModule/Manager
+    - YJBaseModule/MarqueeLabel
+    - YJBaseModule/YJBHpple
+    - YJExtensions
+  - YJExtensions (1.1.6):
+    - YJExtensions/Foundation (= 1.1.6)
+    - YJExtensions/UIKit (= 1.1.6)
+  - YJExtensions/Foundation (1.1.6):
+    - TFHpple
+  - YJExtensions/UIKit (1.1.6):
+    - YJExtensions/Foundation
+  - YJNetManager (1.1.7):
+    - AFNetworking
+    - LGLog
+    - Reachability
+    - YJExtensions
+  - YJPresentAnimation (1.0.2)
+  - YJTaskMark (1.1.0):
+    - YJTaskMark/kuyou (= 1.1.0)
+    - YJTaskMark/Util (= 1.1.0)
+  - YJTaskMark/kuyou (1.1.0)
+  - YJTaskMark/Util (1.1.0):
+    - LGAlertHUD
+    - YJExtensions
+    - YJNetManager
+    - YJTaskMark/kuyou
+  - YJUtils (1.0.3):
+    - YJUtils/YJAudioMerger (= 1.0.3)
+    - YJUtils/YJAudioPlayer (= 1.0.3)
+  - YJUtils/YJAudioMerger (1.0.3)
+  - YJUtils/YJAudioPlayer (1.0.3)
+
+DEPENDENCIES:
+  - LGKnowledgeFramework (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - LGAlertHUD
+    - LGLog
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - Reachability
+    - TFHpple
+    - YJActivityIndicatorView
+    - YJBaseModule
+    - YJExtensions
+    - YJNetManager
+    - YJPresentAnimation
+    - YJTaskMark
+    - YJUtils
+
+EXTERNAL SOURCES:
+  LGKnowledgeFramework:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  LGAlertHUD: 361c84e13876d5c044847725156dccf3558fc0a3
+  LGKnowledgeFramework: e39499b73e46a8958bd6f99f7b10fc4e0dc44d6a
+  LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
+  YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
+  YJBaseModule: 3abcab637c44c90abe5e07465453f2b8d68c17f4
+  YJExtensions: d4b5ac7e1004d05dc6425b9aff3b8437d93ef1ad
+  YJNetManager: 5cbce806ad8c71d67b54217cf830391c786ebddf
+  YJPresentAnimation: 58af2bfff17028cb286ecd442d418af8997f8740
+  YJTaskMark: 9de58e1c3cb3828ac745a197db2421950e5aae4e
+  YJUtils: 2f3a519fc7d4f7586acdc446e5a448cd23bfda33
+
+PODFILE CHECKSUM: ef244d04ca3bf8a5209b754c03e698e1a8ec2f6e
+
+COCOAPODS: 1.7.0.beta.3

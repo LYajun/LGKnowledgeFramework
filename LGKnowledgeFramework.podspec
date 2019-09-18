@@ -8,35 +8,45 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LGKnowledgeFramework'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of LGKnowledgeFramework.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.version          = '1.0.0'
+  s.summary          = '通用知识点学习课件'
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/lyj/LGKnowledgeFramework'
+  s.homepage         = 'https://github.com/LYajun/LGKnowledgeFramework'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'lyj' => 'liuyajun1999@icloud.com' }
-  s.source           = { :git => 'https://github.com/lyj/LGKnowledgeFramework.git', :tag => s.version.to_s }
+  s.author           = { 'LYajun' => 'liuyajun1999@icloud.com' }
+  s.source           = { :git => 'https://github.com/LYajun/LGKnowledgeFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
+  s.static_framework  = true
 
-  s.source_files = 'LGKnowledgeFramework/Classes/**/*'
+  #系统依赖库
+  #s.frameworks = 'xx', 'xx'
+  #s.libraries = 'xx', 'xx', 'xx'
   
-  # s.resource_bundles = {
-  #   'LGKnowledgeFramework' => ['LGKnowledgeFramework/Assets/*.png']
-  # }
+  #需要包含的源文件
+  s.source_files = 'LGKnowledgeFramework/Classes/LGKnowledgeFramework.framework/Headers/*.{h}'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  #你的SDK路径
+  s.vendored_frameworks = 'LGKnowledgeFramework/Classes/LGKnowledgeFramework.framework'
+
+  s.resources = 'LGKnowledgeFramework/Classes/LGKnowledgeFramework.bundle'
+
+  s.dependency 'YJTaskMark'
+  s.dependency 'YJExtensions'
+  s.dependency 'YJBaseModule'
+  s.dependency 'LGAlertHUD'
+  s.dependency 'YJNetManager'
+  s.dependency 'YJPresentAnimation'
+  s.dependency 'YJUtils'
+  s.dependency 'MJExtension'
+  s.dependency 'Masonry'
+
+
 end
