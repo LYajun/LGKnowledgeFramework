@@ -49,6 +49,9 @@ static CGFloat kSoundOffset = 10;
 /** 评测中 */
 @property (nonatomic,assign) BOOL isMarking;
 @property (nonatomic,assign) BOOL isEndMark;
+
+/** 评测超时 */
+@property (nonatomic,assign) BOOL isMarkTimeout;
 @end
 
 @implementation YJSpeechManager
@@ -177,6 +180,7 @@ static CGFloat kSoundOffset = 10;
     __weak typeof(self) weakSelf = self;
     self.isMarking = YES;
     self.isEndMark = NO;
+    self.isMarkTimeout = NO;
     [[KYTestEngine sharedInstance] startEngineWithTestConfig:config result:^(NSString *testResult) {
         [weakSelf showResult:testResult];
     }];
@@ -197,13 +201,16 @@ static CGFloat kSoundOffset = 10;
         }
     }else{
         [self removeTimeoutTimer];
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        NSLog(@"评测结果:%@",result);
         if (!self.isEndMark) {
             NSLog(@"评测异常结束");
 //            [self startEngineAtRefText:self.refText markType:self.markType];
 //            return;
         }
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-        NSLog(@"评测结果:%@",result);
+        if (self.isMarkTimeout) {
+            return;
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [LGAlert hide];
             YJSpeechResultModel *model = [[YJSpeechResultModel alloc] init];
@@ -358,6 +365,7 @@ static CGFloat kSoundOffset = 10;
         if (weakSelf.timeoutCount >= weakSelf.markTimeout) {
             [weakSelf cancelEngine];
             [weakSelf showResult:@"评测超时"];
+            weakSelf.isMarkTimeout = YES;
         }
     });
 }
