@@ -14,19 +14,20 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - LGAlertHUD (1.0.8):
-    - LGAlertHUD/AlertView (= 1.0.8)
+  - LGAlertHUD (1.0.9):
+    - LGAlertHUD/AlertView (= 1.0.9)
     - Masonry
     - YJExtensions
-  - LGAlertHUD/AlertView (1.0.8):
+  - LGAlertHUD/AlertView (1.0.9):
     - Masonry
     - YJExtensions
-  - LGKnowledgeFramework (1.0.0):
+  - LGKnowledgeFramework (1.0.1):
     - LGAlertHUD
     - Masonry
     - MJExtension
     - YJBaseModule
     - YJExtensions
+    - YJImageBrowser
     - YJNetManager
     - YJPresentAnimation
     - YJTaskMark
@@ -41,15 +42,18 @@ PODS:
   - MJExtension (3.1.2)
   - MJRefresh (3.2.0)
   - Reachability (3.2)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
   - TFHpple (2.0.0)
   - YJActivityIndicatorView (1.0.0)
-  - YJBaseModule (1.1.6):
-    - YJBaseModule/Base (= 1.1.6)
-    - YJBaseModule/Manager (= 1.1.6)
-    - YJBaseModule/MarqueeLabel (= 1.1.6)
-    - YJBaseModule/YJBHpple (= 1.1.6)
-    - YJBaseModule/YJBWebView (= 1.1.6)
-  - YJBaseModule/Base (1.1.6):
+  - YJBaseModule (1.2.2):
+    - YJBaseModule/Base (= 1.2.2)
+    - YJBaseModule/Manager (= 1.2.2)
+    - YJBaseModule/MarqueeLabel (= 1.2.2)
+    - YJBaseModule/YJBHpple (= 1.2.2)
+    - YJBaseModule/YJBWebView (= 1.2.2)
+  - YJBaseModule/Base (1.2.2):
     - LGAlertHUD
     - Masonry
     - MJExtension
@@ -57,11 +61,11 @@ PODS:
     - YJActivityIndicatorView
     - YJBaseModule/Manager
     - YJExtensions
-  - YJBaseModule/Manager (1.1.6):
+  - YJBaseModule/Manager (1.2.2):
     - YJExtensions
-  - YJBaseModule/MarqueeLabel (1.1.6)
-  - YJBaseModule/YJBHpple (1.1.6)
-  - YJBaseModule/YJBWebView (1.1.6):
+  - YJBaseModule/MarqueeLabel (1.2.2)
+  - YJBaseModule/YJBHpple (1.2.2)
+  - YJBaseModule/YJBWebView (1.2.2):
     - Masonry
     - YJBaseModule/Manager
     - YJBaseModule/MarqueeLabel
@@ -74,7 +78,16 @@ PODS:
     - TFHpple
   - YJExtensions/UIKit (1.1.6):
     - YJExtensions/Foundation
-  - YJNetManager (1.1.7):
+  - YJImageBrowser (1.0.0):
+    - YJImageBrowser/Const (= 1.0.0)
+    - YJImageBrowser/YJImageBrowserView (= 1.0.0)
+  - YJImageBrowser/Const (1.0.0):
+    - YJExtensions
+  - YJImageBrowser/YJImageBrowserView (1.0.0):
+    - Masonry
+    - SDWebImage
+    - YJImageBrowser/Const
+  - YJNetManager (1.1.8):
     - AFNetworking
     - LGLog
     - Reachability
@@ -107,10 +120,12 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - Reachability
+    - SDWebImage
     - TFHpple
     - YJActivityIndicatorView
     - YJBaseModule
     - YJExtensions
+    - YJImageBrowser
     - YJNetManager
     - YJPresentAnimation
     - YJTaskMark
@@ -122,18 +137,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  LGAlertHUD: 361c84e13876d5c044847725156dccf3558fc0a3
-  LGKnowledgeFramework: e39499b73e46a8958bd6f99f7b10fc4e0dc44d6a
+  LGAlertHUD: c267c0f45b2bf9d5bbdd7303c5d0da14b1f89e1e
+  LGKnowledgeFramework: 298f3179e1826641e2e56b5fd9b00fd656f6d796
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
   YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
-  YJBaseModule: 3abcab637c44c90abe5e07465453f2b8d68c17f4
+  YJBaseModule: 7aba773656e51ba5a76e2ae031fab6da87833cf0
   YJExtensions: d4b5ac7e1004d05dc6425b9aff3b8437d93ef1ad
-  YJNetManager: 5cbce806ad8c71d67b54217cf830391c786ebddf
+  YJImageBrowser: f80e7e8d8bce7829284c9569ec5c205a9bcf26b5
+  YJNetManager: bdf2f175fa3dcf5ebfcdfacc0c607ab1abef1b5d
   YJPresentAnimation: 58af2bfff17028cb286ecd442d418af8997f8740
   YJTaskMark: 9de58e1c3cb3828ac745a197db2421950e5aae4e
   YJUtils: 2f3a519fc7d4f7586acdc446e5a448cd23bfda33

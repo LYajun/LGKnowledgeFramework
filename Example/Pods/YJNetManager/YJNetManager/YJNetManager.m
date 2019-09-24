@@ -70,7 +70,7 @@
     NSDictionary *originParams = self.wParameters;
     NSString *urlStr = [self.wUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     if (self.wParameters) {
-        urlStr = [NSString stringWithFormat:@"%@?%@",urlStr,[self.wParameters yj_URLQueryString]];
+        urlStr = [[NSString stringWithFormat:@"%@?%@",urlStr,[self.wParameters yj_URLQueryString]] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     }
     NSURL *requestUrl = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestUrl];

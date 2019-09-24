@@ -39,9 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (NSString *)yj_imgClickJSSrcPrefix;
+/** 文字自适应 */
 + (NSString *)yj_autoFitTextSizeJSString;
+/** 图片只适应 */
 + (NSString *)yj_autoFitImgSizeJSString;
-
+/** 表格自适应+禁止交互 */
++ (NSString *)yj_autoFitTableSizeJSString;
 - (void)yj_adjustTestSizeWithSizeRate:(nullable NSString *)rate;
 
 - (void)yj_injectImgClickJS;

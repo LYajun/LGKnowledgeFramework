@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LGKnowledgeFramework'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '通用知识点学习课件'
 
   s.description      = <<-DESC
@@ -47,6 +47,6 @@ TODO: Add long description of the pod here.
   s.dependency 'YJUtils'
   s.dependency 'MJExtension'
   s.dependency 'Masonry'
-
+  s.dependency 'YJImageBrowser'
 
 end

@@ -14,6 +14,7 @@
 #import "LGProgressHUD.h"
 #import "YJKlgEmptyAlert.h"
 #import "YJLancooAlert.h"
+#import "YJVipControlView.h"
 #import "UIWindow+YJAlertView.h"
 #import "YJAlertView.h"
 #import "YJAlertViewButton.h"

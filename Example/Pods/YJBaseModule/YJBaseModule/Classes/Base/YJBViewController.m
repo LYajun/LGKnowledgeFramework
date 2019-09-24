@@ -409,6 +409,7 @@
     if (!_noDataLab) {
         _noDataLab = [[UILabel alloc]init];
         _noDataLab.font = [UIFont systemFontOfSize:[YJBManager defaultManager].loadEmptyTitleSize];
+        _noDataLab.numberOfLines = 3;
         _noDataLab.textAlignment = NSTextAlignmentCenter;
         _noDataLab.textColor = [YJBManager defaultManager].loadEmptyTitleColor;
         _noDataLab.text = [YJBManager defaultManager].loadEmptyTitle;
@@ -433,6 +434,7 @@
     if (!_loadErrorLab) {
         _loadErrorLab = [[UILabel alloc]init];
         _loadErrorLab.font = [UIFont systemFontOfSize:[YJBManager defaultManager].loadErrorTitleSize];
+        _loadErrorLab.numberOfLines = 3;
         _loadErrorLab.textAlignment = NSTextAlignmentCenter;
         _loadErrorLab.textColor = [YJBManager defaultManager].loadErrorTitleColor;
         _loadErrorLab.text = [YJBManager defaultManager].loadErrorTitle;

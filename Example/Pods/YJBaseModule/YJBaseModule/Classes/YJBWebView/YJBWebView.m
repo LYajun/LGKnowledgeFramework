@@ -82,7 +82,7 @@
 }
 - (void)yj_loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL{
     self.isAddImgOnClick = YES;
-    [self loadHTMLString:[NSString yj_adaptWebViewForHtml:[self modifyImgSrc:string]] baseURL:baseURL];
+    [self loadHTMLString:[self modifyImgSrc:string] baseURL:baseURL];
 }
 - (void)yj_loadRequestWithUrlString:(NSString *)string{
     self.isAddImgOnClick = NO;
@@ -168,7 +168,9 @@
 + (NSString *)yj_autoFitImgSizeJSString{
     return @"var imgs=document.getElementsByTagName('img');var maxwidth=document.body.clientWidth;var length=imgs.length;for(var i=0;i<length;i++){var img=imgs[i];if(img.width > maxwidth){img.style.width = '90%';img.style.height = 'auto';}}";
 }
-
++ (NSString *)yj_autoFitTableSizeJSString{
+    return @"function compatTable(){var tableElements=document.getElementsByTagName(\"table\");for(var i=0;i<tableElements.length;i++){var tableElement=tableElements[i];tableElement.cellspacing=\"\";tableElement.cellpadding=\"\";tableElement.width = document.body.clientWidth;tableElement.border=\"\";tableElement.setAttribute(\"style\",\"border-collapse:collapse; display:table;\")}var tdElements=document.getElementsByTagName(\"td\");for(var i=0;i<tdElements.length;i++){var tdElement=tdElements[i];tdElement.valign=\"\";tdElement.width=\"\";tdElement.setAttribute(\"style\",\"border:1px solid black;\");tdElement.setAttribute(\"contenteditable\",\"false\")}};compatTable();";
+}
 - (void)yj_injectImgClickJS{
     // window.location.href='yjclickaction:'+this.src
     // alert('yjClickAction:'+ this.src)
