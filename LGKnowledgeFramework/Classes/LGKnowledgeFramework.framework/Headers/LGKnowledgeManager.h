@@ -13,8 +13,11 @@
 
 /** 知识点服务器地址 */
 @property (nonatomic,copy) NSString *apiUrl;
+/** 资源服务器基础地址,可以不传 */
+@property (nonatomic,copy) NSString *baseUrl;
 /** 知识点编码 */
 @property (nonatomic,copy) NSString *klgCode;
+
 /** VIP模式 默认为YES，不对入口做限制*/
 @property (nonatomic,assign) BOOL isVipMode;
 /** 是否只开放知识点卡片 */
