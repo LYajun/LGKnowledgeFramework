@@ -1,6 +1,6 @@
 {
   "name": "LGKnowledgeFramework",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "通用知识点学习课件",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/LYajun/LGKnowledgeFramework",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LYajun/LGKnowledgeFramework.git",
-    "tag": "1.0.3"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "8.0"

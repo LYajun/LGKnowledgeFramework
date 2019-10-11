@@ -21,7 +21,7 @@ PODS:
   - LGAlertHUD/AlertView (1.0.9):
     - Masonry
     - YJExtensions
-  - LGKnowledgeFramework (1.0.3):
+  - LGKnowledgeFramework (1.0.4):
     - LGAlertHUD
     - Masonry
     - MJExtension
@@ -138,7 +138,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   LGAlertHUD: c267c0f45b2bf9d5bbdd7303c5d0da14b1f89e1e
-  LGKnowledgeFramework: ac35b1ed242fa28a166d41156b4c8b56b2f947eb
+  LGKnowledgeFramework: 6352354a7ec3057b9d11c336211ec69326f4ff1c
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 81e8e411ced318561dd09334b0c83d8227cef79c
