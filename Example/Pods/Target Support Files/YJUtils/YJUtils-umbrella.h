@@ -12,6 +12,7 @@
 
 #import "YJAudioMerger.h"
 #import "YJAudioPlayer.h"
+#import "YJMediaCutter.h"
 
 FOUNDATION_EXPORT double YJUtilsVersionNumber;
 FOUNDATION_EXPORT const unsigned char YJUtilsVersionString[];

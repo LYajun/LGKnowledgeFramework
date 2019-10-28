@@ -28,6 +28,9 @@
 #import "YJAlertViewWindow.h"
 #import "YJAlertViewWindowContainer.h"
 #import "YJAlertViewWindowsObserver.h"
+#import "YJSheetCell.h"
+#import "YJSheetHeaderView.h"
+#import "YJSheetView.h"
 
 FOUNDATION_EXPORT double LGAlertHUDVersionNumber;
 FOUNDATION_EXPORT const unsigned char LGAlertHUDVersionString[];

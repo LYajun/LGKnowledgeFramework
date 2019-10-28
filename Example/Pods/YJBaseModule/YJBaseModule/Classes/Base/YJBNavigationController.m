@@ -45,6 +45,18 @@
      */
     return self.viewControllers.count !=1 && ![[self valueForKey:@"_isTransitioning"] boolValue];
 }
+// 手指触摸屏幕后回调的方法，返回NO则不再进行手势识别，方法触发等
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    if (gestureRecognizer == self.backGesture) {
+        
+        CGPoint touchPoint = [touch locationInView:[UIApplication sharedApplication].delegate.window];
+        if (touchPoint.x > 0 && touchPoint.x < 20) {
+            return YES;
+        }
+        return NO;
+    }
+    return YES;
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

@@ -63,8 +63,6 @@
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)] && self.closeSideslip) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
         ((YJBNavigationController *)self.navigationController).backGesture.enabled = NO;
-    }else if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)] && !self.closeSideslip && self.closeFullScreenSideslip) {
-        ((YJBNavigationController *)self.navigationController).backGesture.enabled = NO;
     }
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -73,8 +71,6 @@
     
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)] && self.closeSideslip) {
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        ((YJBNavigationController *)self.navigationController).backGesture.enabled = YES;
-    }else if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)] && !self.closeSideslip && self.closeFullScreenSideslip) {
         ((YJBNavigationController *)self.navigationController).backGesture.enabled = YES;
     }
 }

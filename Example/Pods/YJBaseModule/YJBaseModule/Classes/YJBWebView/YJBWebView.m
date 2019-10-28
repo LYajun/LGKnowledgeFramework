@@ -125,7 +125,7 @@
     return @[@"wav",@"mp3",@"pcm",@"amr",@"aac",@"caf"];
 }
 + (NSArray *)yj_imageAllFileExtension{
-    return @[@"png",@"jpg",@"gif"];
+    return @[@"png",@"jpg",@"gif",@"jpeg"];
 }
 
 + (BOOL)yj_isVoiceFileWithExtName:(NSString *)extName{

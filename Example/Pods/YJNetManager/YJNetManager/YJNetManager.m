@@ -333,10 +333,14 @@
     NSString *urlStr = url;
     NSString *dataStr = @"";
     if (self.wParameters) {
-        dataStr = [NSString yj_encryptWithKey:self.userID encryptStr:[self.wParameters yj_URLQueryString]];
+        NSString *parametersString = [self.wParameters yj_URLQueryString];
+        parametersString = [parametersString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        dataStr = [NSString yj_encryptWithKey:self.userID encryptStr:parametersString];
     }
-    urlStr = [NSString stringWithFormat:@"%@?%@",urlStr,dataStr];
-    NSURL *requestUrl = [NSURL URLWithString:[urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    if (dataStr.length > 0) {
+        urlStr = [NSString stringWithFormat:@"%@?%@",urlStr,dataStr];
+    }
+    NSURL *requestUrl = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestUrl];
     request.allHTTPHeaderFields = [self exerciseMd5ParamsWithMd5Str:dataStr];
     return request;

@@ -23,13 +23,13 @@
 #import "NSUserDefaults+YJ.h"
 #import "UIButton+YJ.h"
 #import "UIColor+YJ.h"
+#import "UIControl+YJ.h"
 #import "UIDevice+YJ.h"
 #import "UIImage+YJ.h"
 #import "UIImageView+YJ.h"
 #import "UINavigationBar+YJ.h"
 #import "UIView+YJ.h"
 #import "UIViewController+YJ.h"
-#import "UIWebView+YJ.h"
 #import "UIWindow+YJ.h"
 
 FOUNDATION_EXPORT double YJExtensionsVersionNumber;
