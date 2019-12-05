@@ -33,4 +33,5 @@
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller addStudyBlock:(void (^) (void))addStudyBlock;
 
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller cardInfo:(NSDictionary *)cardInfo;
+- (void)presentKnowledgeAlertViewByController:(UIViewController *)controller cardInfoArr:(NSArray *)cardInfoArr;
 @end

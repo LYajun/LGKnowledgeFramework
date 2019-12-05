@@ -25,11 +25,12 @@ PODS:
   - LGAlertHUD/YJSheetView (1.1.2):
     - Masonry
     - YJExtensions
-  - LGKnowledgeFramework (1.0.6):
+  - LGKnowledgeFramework (1.0.7):
     - LGAlertHUD
     - Masonry
     - MJExtension
     - YJBaseModule
+    - YJCoreText
     - YJExtensions
     - YJImageBrowser
     - YJNetManager
@@ -75,6 +76,13 @@ PODS:
     - YJBaseModule/MarqueeLabel
     - YJBaseModule/YJBHpple
     - YJExtensions
+  - YJCoreText (1.0.2):
+    - YJCoreText/Model (= 1.0.2)
+    - YJCoreText/YJDrawView (= 1.0.2)
+  - YJCoreText/Model (1.0.2):
+    - YJExtensions
+  - YJCoreText/YJDrawView (1.0.2):
+    - YJCoreText/Model
   - YJExtensions (1.2.0):
     - YJExtensions/Foundation (= 1.2.0)
     - YJExtensions/UIKit (= 1.2.0)
@@ -130,6 +138,7 @@ SPEC REPOS:
     - TFHpple
     - YJActivityIndicatorView
     - YJBaseModule
+    - YJCoreText
     - YJExtensions
     - YJImageBrowser
     - YJNetManager
@@ -144,7 +153,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   LGAlertHUD: ba3618afe9b2c4baf74fd4394c02b633e6ad08b3
-  LGKnowledgeFramework: 69c41bf099437d4df18f3470c4d0c65fba345620
+  LGKnowledgeFramework: a68efd7261ec6304564d99a86708ff4c7e10f0dc
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
@@ -154,6 +163,7 @@ SPEC CHECKSUMS:
   TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
   YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
   YJBaseModule: 6c93528dd73380d7e513967d6e3cd0a7c9d47a10
+  YJCoreText: a595eb95f78f34000547278fd856fbe8ac43e0af
   YJExtensions: ec7a9bd9b0afddd431142aef6d7b6437b74c382e
   YJImageBrowser: f80e7e8d8bce7829284c9569ec5c205a9bcf26b5
   YJNetManager: ea4d76046ac25125187ce4edd5ec22bbeb84744c
