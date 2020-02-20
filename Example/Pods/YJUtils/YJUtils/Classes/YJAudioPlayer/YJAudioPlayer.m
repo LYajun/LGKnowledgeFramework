@@ -30,6 +30,9 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
     }
     return self;
 }
+- (void)dealloc{
+    [self invalidate];
+}
 - (void)configure{
     _audioRate = 1.0;
     
@@ -136,6 +139,13 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
 
 /** 播放完成 */
 - (void)audioPlayDidEnd:(NSNotification *)notification {
+    AVPlayerItem *playerItem = (AVPlayerItem *)notification.object;
+    NSString *urlStr =  [(AVURLAsset *)playerItem.asset URL].absoluteString;
+    NSString *currentUrlStr =  [(AVURLAsset *)self.audioPlayer.currentItem.asset URL].absoluteString;
+    if (!IsStrEmpty(urlStr) && !IsStrEmpty(currentUrlStr) && ![urlStr isEqualToString:currentUrlStr]) {
+        return;
+    }
+    
     [self stop];
     if (self.delegate && [self.delegate respondsToSelector:@selector(yj_audioPlayerDidPlayComplete)]) {
         [self.delegate yj_audioPlayerDidPlayComplete];

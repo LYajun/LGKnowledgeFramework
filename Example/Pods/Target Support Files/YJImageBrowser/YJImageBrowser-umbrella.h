@@ -12,6 +12,8 @@
 
 #import "YJImageBrowser.h"
 #import "YJImageBrowserConst.h"
+#import "YJCircleProgressView.h"
+#import "YJCircleTitleProgressView.h"
 #import "YJImageBrowserScrollView.h"
 #import "YJImageBrowserView.h"
 

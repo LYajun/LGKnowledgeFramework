@@ -37,7 +37,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     KlgViewController *klgVC = [[KlgViewController alloc] init];
     klgVC.TypeName = self.dataArr[indexPath.row];
-    klgVC.klgUrl = @"http://192.168.129.129:10107/";
+    klgVC.klgUrl = @"http://119.3.7.171:10103/WS_ResourceCloud/";
     [self.navigationController pushViewController:klgVC animated:YES];
 }
 - (UITableView *)tableView{

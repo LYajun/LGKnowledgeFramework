@@ -299,7 +299,8 @@
             
              if (!self.isAllContain) {
                  if (i == srtArr.count-1) {
-                     if (beginTime >= self.cutStartTime && beginTime < self.cutEndTime && self.mediaDuration <= self.cutEndTime) {
+                     // beginTime >= self.cutStartTime && beginTime < self.cutEndTime && self.mediaDuration <= self.cutEndTime
+                     if (beginTime >= self.cutStartTime && beginTime < self.cutEndTime) {
                          NSMutableDictionary *srt_m = [NSMutableDictionary dictionaryWithDictionary:srt];
                          beginTime = beginTime - self.cutStartTime;
                          [srt_m setObject:@(beginTime) forKey:@"beginTime"];
@@ -308,10 +309,8 @@
                  }else{
                      NSDictionary *nextSrt = srtArr[i+1];
                      CGFloat endTime = [[nextSrt objectForKey:@"beginTime"] doubleValue];
-                     NSTimeInterval cutTimeRange = self.cutEndTime - self.cutStartTime;
-                     NSTimeInterval timeRange = endTime - beginTime;
                      if ((beginTime >= self.cutStartTime && beginTime < self.cutEndTime) &&
-                         (endTime <= self.cutEndTime || (endTime > self.cutEndTime && timeRange <= cutTimeRange))) {
+                         endTime <= self.cutEndTime) {
                          NSMutableDictionary *srt_m = [NSMutableDictionary dictionaryWithDictionary:srt];
                          beginTime = beginTime - self.cutStartTime;
                          [srt_m setObject:@(beginTime) forKey:@"beginTime"];

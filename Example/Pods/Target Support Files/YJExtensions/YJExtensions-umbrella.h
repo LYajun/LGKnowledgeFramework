@@ -31,6 +31,9 @@
 #import "UIView+YJ.h"
 #import "UIViewController+YJ.h"
 #import "UIWindow+YJ.h"
+#import "XPathQuery.h"
+#import "YJEHpple.h"
+#import "YJEHppleElement.h"
 
 FOUNDATION_EXPORT double YJExtensionsVersionNumber;
 FOUNDATION_EXPORT const unsigned char YJExtensionsVersionString[];

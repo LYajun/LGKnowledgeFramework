@@ -8,7 +8,7 @@
 
 #import "NSString+YJ.h"
 #import <CommonCrypto/CommonCrypto.h>
-#import <TFHpple/TFHpple.h>
+#import "YJEHpple.h"
 #import <objc/runtime.h>
 
 #define YJ_ASSOCIATIVE_CURRENT_DICTIONARY_KEY @"ASSOCIATIVE_CURRENT_DICTIONARY_KEY"
@@ -64,6 +64,9 @@
 }
 - (NSString *)yj_deleteWhitespaceCharacter{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+- (NSString *)yj_deleteWhitespaceAndNewlineCharacter{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 - (NSInteger)yj_stringToASCIIInt{
     return [self characterAtIndex:0];
@@ -227,12 +230,12 @@
     }
     NSData *htmlData = [html dataUsingEncoding:NSUTF8StringEncoding];
     // 解析html数据
-    TFHpple *xpathParser = [[TFHpple alloc] initWithHTMLData:htmlData];
+    YJEHpple *xpathParser = [[YJEHpple alloc] initWithHTMLData:htmlData];
     // 根据标签来进行过滤
     NSArray *imgArray = [xpathParser searchWithXPathQuery:@"//img"];
     
     if (imgArray && imgArray.count > 0) {
-        [imgArray enumerateObjectsUsingBlock:^(TFHppleElement *hppleElement, NSUInteger idx, BOOL * _Nonnull stop) {
+        [imgArray enumerateObjectsUsingBlock:^(YJEHppleElement *hppleElement, NSUInteger idx, BOOL * _Nonnull stop) {
             NSDictionary *attributes = hppleElement.attributes;
             NSString *src = attributes[@"src"];
             NSString *srcSuf = [src componentsSeparatedByString:@"."].lastObject;

@@ -8,7 +8,6 @@
 
 #import "YJImageBrowserView.h"
 #import "YJImageBrowserScrollView.h"
-#import <Masonry/Masonry.h>
 #import "YJImageBrowserConst.h"
 
 @interface YJImageBrowserView ()<UIScrollViewDelegate>
@@ -38,7 +37,9 @@
         }
         self.scrollView.contentSize = CGSizeMake(LG_ScreenWidth*self.imageCount, LG_ScreenHeight);
         self.scrollView.contentOffset = CGPointMake(LG_ScreenWidth*index, 0);
-        [self addSubview:self.pageLab];
+        if (images.count > 1) {
+            [self addSubview:self.pageLab];
+        }
         self.currentIndex = index;
     }
     return self;

@@ -133,6 +133,8 @@ static CGFloat kSoundOffset = 10;
    
     self.markType = markType;
     self.refText = refText;
+    self.isMarking = YES;
+    self.isEndMark = NO;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"micAuthorization"]) {
         [self showResult:@"麦克风权限未打开"];
         return;
@@ -175,8 +177,6 @@ static CGFloat kSoundOffset = 10;
     config.sampleRate = 16000;
     config.sampleBytes = 2;
     __weak typeof(self) weakSelf = self;
-    self.isMarking = YES;
-    self.isEndMark = NO;
     [[KYTestEngine sharedInstance] startEngineWithTestConfig:config result:^(NSString *testResult) {
         [weakSelf showResult:testResult];
     }];
