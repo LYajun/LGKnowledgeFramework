@@ -31,7 +31,8 @@ typedef NS_ENUM(NSInteger,YJResponseType){
 @property (assign, nonatomic) NSTimeInterval serverTimeInteverval;
 /** 用户ID */
 @property (nonatomic,copy) NSString *userID;
-
+/** 用户token */
+@property (nonatomic,copy) NSString *token;
 
 @property (nonatomic,copy,readonly) NSDictionary *wParameters;
 

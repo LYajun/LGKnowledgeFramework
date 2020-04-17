@@ -113,6 +113,12 @@
                 html = [html stringByReplacingOccurrencesOfString:onclick withString:onclickReplace];
             }else{
                 NSString *onclick = [NSString stringWithFormat:@"src=\"%@\"",imgSrc];
+                if (![html containsString:onclick]) {
+                    onclick = [NSString stringWithFormat:@"src='%@'",imgSrc];
+                    if (![html containsString:onclick]) {
+                        onclick = [NSString stringWithFormat:@"src = '%@'",imgSrc];
+                    }
+                }
                 NSString *onclickReplace = [NSString stringWithFormat:@"%@ onclick=\"yjClickAction('%@')\"",onclick,[imgSrc stringByReplacingOccurrencesOfString:@"\\" withString:@"/"]];
                 html = [html stringByReplacingOccurrencesOfString:onclick withString:onclickReplace];
             }

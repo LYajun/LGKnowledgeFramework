@@ -22,6 +22,7 @@
     if ((![lrc containsString:@"]"] && ![lrc containsString:@"["])) {
         return @{};
     }
+    lrc = [lrc stringByReplacingOccurrencesOfString:@"][" withString:@"]"];
     lrc = [lrc stringByReplacingOccurrencesOfString:@"]" withString:@"\n"];
     lrc = [lrc stringByReplacingOccurrencesOfString:@"[" withString:[[NSString yj_Char1] stringByAppendingString:@"\n"]];
     NSArray *singlearray = [lrc componentsSeparatedByString:@"\n"];
@@ -37,12 +38,12 @@
         }
         
         switch (j) {
-            case 1:
+                case 1:
             {
                 //时间
                 NSString *timeStr = str;
                 NSArray *arr = [timeStr componentsSeparatedByString:@":"];
-                if ([self isContainLimitText:arr.lastObject]) {
+                if ([self isContainLimitText:arr.lastObject] || [self isContainLimitText:arr.firstObject]) {
                     j = 0;
                 }else{
                     NSMutableArray *arrCopy = arr.mutableCopy;
@@ -57,7 +58,7 @@
                 }
             }
                 break;
-            case 2:
+                case 2:
             {
                 
                 if ([s isEqualToString:singlearray.lastObject]) {
@@ -74,7 +75,7 @@
                 }
             }
                 break;
-            case 3:
+                case 3:
             {
                 if (str && str.length > 0) {
                     subStr = [subStr stringByAppendingFormat:@"\n%@",str];
