@@ -137,7 +137,7 @@ DEPENDENCIES:
   - LGKnowledgeFramework (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - AFNetworking
     - LGAlertHUD
     - LGLog
@@ -180,6 +180,6 @@ SPEC CHECKSUMS:
   YJTaskMark: af9e04cc65cc35344a9286e534aeaa810117f637
   YJUtils: da9d4d2129144bf99b1ca057df26351cbfb9360e
 
-PODFILE CHECKSUM: 58db8451ae4908c8cc55c25e9c072e7094aa2ad7
+PODFILE CHECKSUM: ef244d04ca3bf8a5209b754c03e698e1a8ec2f6e
 
 COCOAPODS: 1.9.1
