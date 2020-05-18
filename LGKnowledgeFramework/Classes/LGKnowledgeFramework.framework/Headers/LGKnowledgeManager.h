@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
 /** 测试使用 */
 typedef NS_ENUM(NSUInteger, LGKnowledgeTestLevel) {
     LGKnowledgeTestLevelDefault,
@@ -16,12 +15,9 @@ typedef NS_ENUM(NSUInteger, LGKnowledgeTestLevel) {
     LGKnowledgeTestLevelMiddle,
     LGKnowledgeTestLevelHigh,
 };
-
 @interface LGKnowledgeManager : NSObject
-
 /** 测试使用，指定训练等级(初中高,默认自动通过知识点ID判断) */
 @property (nonatomic, assign) LGKnowledgeTestLevel testLevel;
-
 /** 知识点服务器地址 */
 @property (nonatomic,copy) NSString *apiUrl;
 /** 资源服务器基础地址,可以不传 */
@@ -33,24 +29,24 @@ typedef NS_ENUM(NSUInteger, LGKnowledgeTestLevel) {
 @property (nonatomic,assign) BOOL isVipMode;
 /** 是否只开放知识点卡片 */
 @property (nonatomic,assign) BOOL onlyKlgCark;
-
 /** 进入知识点学习课件错误回调 */
 @property (nonatomic,copy) void (^klgErrorBlock) (NSError *error);
+/** 新建笔记回调 */
+@property (nonatomic,copy) void (^klgNewNoteBlock) (NSString *klgCode,NSString *klgName,NSString *US_phonetic,NSString *US_voice,NSString *UN_phonetic,NSString *UN_voice,NSAttributedString *ExplainAttr);
+/** 知识点收藏回调,isCollect:YES-收藏，NO-取消收藏 */
+@property (nonatomic,copy) void (^klgCollectBlock) (BOOL isCollect,NSString *klgCode);
 
+/** 是否可以新建笔记 */
+@property (nonatomic,assign) BOOL multimediaOpenNewNoteEnable;
+/** 不需外部赋值  */
+@property (nonatomic,assign) BOOL openNewNoteEnable;
 + (LGKnowledgeManager *)defaultManager;
 
-/** 直接进入知识点课件 */
+
 - (void)presentKnowledgeControllerBy:(UIViewController *)controller;
-
-/** 调用知识点弹窗 */
-/** 弹窗1:通过klgCode进行查询 提供“加入再学习”按钮，电子素材用到 */
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller addStudyBlock:(void (^) (void))addStudyBlock;
-
-/** 弹窗2:通过知识点标准JSON数据进行查询 */
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller cardInfo:(NSDictionary *)cardInfo;
-/** 弹窗3:通过知识点标准JSON数组进行查询 */
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller cardInfoArr:(NSArray *)cardInfoArr;
 
-/** 弹窗4:通过课件编辑JSON数组进行查询 */
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller klgJsonArr:(NSArray *)klgJsonArr;
 @end

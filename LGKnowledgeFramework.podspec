@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LGKnowledgeFramework'
-  s.version          = '2.0.4'
+  s.version          = '2.0.5'
   s.summary          = '智能化知识点学习课件'
 
   s.description      = <<-DESC
