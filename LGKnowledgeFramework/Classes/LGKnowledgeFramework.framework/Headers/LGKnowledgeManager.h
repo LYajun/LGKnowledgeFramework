@@ -42,6 +42,12 @@ typedef NS_ENUM(NSUInteger, LGKnowledgeTestLevel) {
 @property (nonatomic,assign) BOOL openNewNoteEnable;
 + (LGKnowledgeManager *)defaultManager;
 
+/** 查询知识点名*/
+@property (nonatomic,copy) NSString *queryKlgName;
+@property (nonatomic,copy) NSString *userID;
+@property (nonatomic,copy) NSString *queryApi;
+
+- (void)presentQueryKnowledgeControllerBy:(UIViewController *)controller;
 
 - (void)presentKnowledgeControllerBy:(UIViewController *)controller;
 - (void)presentKnowledgeAlertViewByController:(UIViewController *)controller addStudyBlock:(void (^) (void))addStudyBlock;
