@@ -18,6 +18,14 @@
     });
     return macro;
 }
+- (NSString *)filterHtml:(NSString *)html{
+    NSString *content = html;
+    content = [[NSRegularExpression regularExpressionWithPattern:@"</?br/?>" options:NSRegularExpressionCaseInsensitive error:nil] stringByReplacingMatchesInString:content options:NSMatchingReportCompletion range:NSMakeRange(0, content.length) withTemplate:@"\n"];
+    NSRegularExpression *regularExpretion=[NSRegularExpression regularExpressionWithPattern:@"<[^>]*>|" options:NSRegularExpressionCaseInsensitive error:nil];
+    content = [regularExpretion stringByReplacingMatchesInString:content options:NSMatchingReportProgress range:NSMakeRange(0, content.length) withTemplate:@""];
+    content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return content;
+}
 - (NSDictionary *)parseLrc:(NSString *)lrc{
     if ((![lrc containsString:@"]"] && ![lrc containsString:@"["])) {
         return @{};
@@ -62,11 +70,13 @@
             {
                 
                 if ([s isEqualToString:singlearray.lastObject]) {
-                    [subtitlesarray addObject:s];
+                   NSString *sub = [self filterHtml:s];
+                    [subtitlesarray addObject:sub];
                 }else{
                     NSString *nextS = [singlearray objectAtIndex:i+1];
                     NSString *nextStr = [nextS stringByReplacingOccurrencesOfString:@"\r" withString:@""];
                     if ([nextStr isEqualToString:[NSString yj_Char1]]) {
+                       str = [self filterHtml:str];
                         [subtitlesarray addObject:str];
                         subStr = @"";
                     }else{
@@ -81,6 +91,7 @@
                     subStr = [subStr stringByAppendingFormat:@"\n%@",str];
                 }
                 if (subtitlesarray.count < begintimearray.count) {
+                   subStr = [self filterHtml:subStr];
                     [subtitlesarray addObject:subStr];
                 }
                 subStr = @"";
@@ -168,20 +179,22 @@
                     }
                     NSNumber *endnum = [NSNumber numberWithFloat:fl];
                     [endtimearray addObject:endnum];
+                }else{
+                    j--;
                 }
             }
                 break;
             case 1:
                 subStr = str;
                 if ([s isEqualToString:singlearray.lastObject]) {
-                    [subtitlesarray addObject:subStr];
+                    [subtitlesarray addObject:[self filterHtml:subStr]];
                 }
                 break;
             case 2:
                 if (str && str.length > 0) {
                     subStr = [subStr stringByAppendingFormat:@"\n%@",str];
                 }
-                [subtitlesarray addObject:subStr];
+                [subtitlesarray addObject:[self filterHtml:subStr]];
                 subStr = @"";
                 break;
             default:

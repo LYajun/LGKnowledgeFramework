@@ -10,6 +10,7 @@
 #import "YJUploadModel.h"
 #import "NSError+YJNetManager.h"
 #import "YJNetMonitoring.h"
+#import <AFNetworking/AFNetworking.h>
 
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger,YJRequestType){
@@ -60,9 +61,11 @@ typedef NS_ENUM(NSInteger,YJResponseType){
 
 /** 上传文件模型 */
 - (YJNetManager* (^)(YJUploadModel *uploadModel))setUploadModel;
-
+/** 缓存目录路径 */
+- (YJNetManager* (^)(NSString *cacheDir))setCacheDir;
 /** 缓存文件夹路径 */
 - (NSString *)cachePath;
+- (void)removeAllCacheFile;
 
 - (void)startRequestWithSuccess:(void(^)(id response))success
                         failure:(void (^)(NSError * error))failure;
@@ -73,7 +76,10 @@ typedef NS_ENUM(NSInteger,YJResponseType){
 
 - (void)downloadCacheFileWithSuccess:(void(^)(id _Nullable response))success
                          failure:(void (^)(NSError * _Nullable error))failure;
+- (void)downloadCustomCacheFileWithSuccess:(void(^)(id _Nullable response))success
+failure:(void (^)(NSError * _Nullable error))failure;
 
+- (void)uploadFileWithBlock:(void (^)(id <AFMultipartFormData> formData))block progress:(nullable void (^)(NSProgress *progress))progress success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
 - (NSString *)currentServiceTimeStamp;
 

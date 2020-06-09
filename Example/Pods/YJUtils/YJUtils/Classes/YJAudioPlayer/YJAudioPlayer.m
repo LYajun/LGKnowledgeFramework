@@ -69,6 +69,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
         [self.audioPlayer play];
         self.audioPlayer.rate = self.audioRate;
     }
+    
     self.isPlaying = YES;
 }
 - (void)pause {
@@ -100,6 +101,21 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
     }];
 }
 #pragma mark - Private
++ (NSString *)deleteURLDoubleSlashWithUrlStr:(NSString *)urlStr{
+    if (urlStr && urlStr.length > 0){
+        urlStr = [urlStr stringByRemovingPercentEncoding];
+        urlStr = [urlStr stringByReplacingOccurrencesOfString:@"\\" withString:@"/"];
+    }
+    if (urlStr && urlStr.length > 0 && [urlStr containsString:@"://"]) {
+        NSArray *urlArr = [urlStr componentsSeparatedByString:@"://"];
+       NSString *lastStr = [urlArr.lastObject stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+       while ([lastStr containsString:@"//"]) {
+           lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+       }
+       urlStr = [NSString stringWithFormat:@"%@://%@",urlArr.firstObject,lastStr];
+    }
+    return urlStr;
+}
 - (void)prepareToPlay {
     [self invalidate];
     NSURL *url = nil;
@@ -110,6 +126,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
     }
     
     AVPlayerItem *currentItem = [AVPlayerItem playerItemWithURL:url];
+    currentItem.audioTimePitchAlgorithm = AVAudioTimePitchAlgorithmTimeDomain;
     [self.audioPlayer replaceCurrentItemWithPlayerItem:currentItem];
     
     if (@available(iOS 10.0, *)) {
@@ -316,6 +333,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
 #pragma mark - Setter & Getter
 
 - (void)setAudioUrl:(NSString *)audioUrl{
+    audioUrl = [YJAudioPlayer deleteURLDoubleSlashWithUrlStr:audioUrl];
     _audioUrl = audioUrl;
     if (!IsStrEmpty(audioUrl)) {
         [self prepareToPlay];

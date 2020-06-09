@@ -7,8 +7,6 @@
 //
 
 #import "YJNetManager.h"
-#import <AFNetworking/AFNetworking.h>
-
 #import <YJExtensions/YJExtensions.h>
 #import <LGLog/LGLog.h>
 
@@ -22,7 +20,7 @@
 @property (nonatomic,copy) NSDictionary *wHttpHeader;
 @property (nonatomic,strong) YJUploadModel *wUploadModel;
 @property (nonatomic,assign) NSTimeInterval wTimeout;
-
+@property (nonatomic,copy) NSString *wCacheDir;
 @property (nonatomic,strong) NSURLSessionDataTask *currentDataTask;
 @end
 
@@ -52,7 +50,7 @@
     _wParameters = nil;
     _wHttpHeader = nil;
     _wUploadModel = nil;
-    _wTimeout = 15;
+    _wTimeout = 30;
 }
 - (void)cancelRequest{
     if (self.currentDataTask) {
@@ -124,27 +122,57 @@
         return;
     }
     NSString *urlStr = self.wUrl;
+    YJResponseType responseType = self.wResponseType;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *str = [[NSString alloc] initWithContentsOfFile:urlStr encoding:NSUTF8StringEncoding error:nil];
-        NSData *JSONData = [str dataUsingEncoding:NSUTF8StringEncoding];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (JSONData) {
-                NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];
-                if (responseJSON && responseJSON.count > 0) {
-                    success(responseJSON);
+        if (responseType == YJResponseTypeString) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (str && str.length > 0) {
+                    success(str);
                 }else{
                     failure([NSError yj_errorWithCode:YJErrorUrlEmpty description:@"资源不存在"]);
                 }
-            }else{
-                failure([NSError yj_errorWithCode:YJErrorUrlEmpty description:@"资源不存在"]);
-            }
-        });
+            });
+        }else{
+            NSData *JSONData = [str dataUsingEncoding:NSUTF8StringEncoding];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (JSONData) {
+                    NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];
+                    if (responseJSON && responseJSON.count > 0) {
+                        success(responseJSON);
+                    }else{
+                        failure([NSError yj_errorWithCode:YJErrorUrlEmpty description:@"资源不存在"]);
+                    }
+                }else{
+                    failure([NSError yj_errorWithCode:YJErrorUrlEmpty description:@"资源不存在"]);
+                }
+            });
+        }
     });
+}
+- (void)uploadFileWithBlock:(void (^)(id <AFMultipartFormData> formData))block progress:(nullable void (^)(NSProgress *progress))progress success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
+    NSString *urlStr = [self.wUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/x-www-form-urlencoded",nil];
+    [manager POST:urlStr parameters:self.wParameters constructingBodyWithBlock:block progress:^(NSProgress * _Nonnull uploadProgress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            progress(uploadProgress);
+        });
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            success(responseObject);
+        });
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       dispatch_async(dispatch_get_main_queue(), ^{
+            failure(error);
+        });
+    }];
 }
 - (void)uploadGetRequestWithProgress:(nullable void(^)(NSProgress * progress))progress success:(void(^)(id response))success failure:(void (^)(NSError * error))failure{
     NSString *originUrl = self.wUrl;
      NSString *urlStr = [self.wUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/x-www-form-urlencoded",nil];
     __weak typeof(self) weakSelf = self;
     [manager POST:urlStr parameters:self.wParameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         for (int i = 0; i < weakSelf.wUploadModel.uploadDatas.count; i++) {
@@ -296,11 +324,10 @@
     }
     [self replace];
 }
-
-- (void)downloadCacheFileWithSuccess:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure{
+- (void)downloadCustomCacheFileWithSuccess:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure{
     NSString *fileName = [self.wUrl componentsSeparatedByString:@"/"].lastObject;
     NSString *urlString = [self.wUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    NSString *path = [[self cachePath] stringByAppendingPathComponent:fileName];
+    NSString *path = [self.wCacheDir stringByAppendingPathComponent:fileName];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         if (success) {
             success(path);
@@ -314,7 +341,7 @@
     __weak typeof(self) weakSelf = self;
     NSURLSessionDownloadTask *task = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        NSString *path = [[weakSelf cachePath] stringByAppendingPathComponent:fileName];
+        NSString *path = [weakSelf.wCacheDir stringByAppendingPathComponent:fileName];
         //这里返回的是文件下载到哪里的路径 要注意的是必须是携带协议file://
         return [NSURL fileURLWithPath:path];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
@@ -332,7 +359,16 @@
     [task resume];
     [self replace];
 }
-
+- (void)downloadCacheFileWithSuccess:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure{
+    self.wCacheDir = [self cachePath];
+    [self downloadCustomCacheFileWithSuccess:success failure:failure];
+}
+- (void)removeAllCacheFile{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:self.cachePath]) {
+        [fileManager removeItemAtPath:self.cachePath error:nil];
+    }
+}
 #pragma mark - Setter && Getter
 - (NSMutableURLRequest *)exerciseMd5GetReqWithUrl:(NSString *)url{
     NSString *urlStr = url;
@@ -381,6 +417,12 @@
         [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return filePath;
+}
+- (YJNetManager * _Nonnull (^)(NSString * _Nonnull))setCacheDir{
+    return ^YJNetManager* (NSString *cacheDir) {
+        self.wCacheDir = cacheDir;
+        return self;
+    };
 }
 - (YJNetManager * _Nonnull (^)(NSString * _Nonnull))setRequest{
     return ^YJNetManager* (NSString *url) {

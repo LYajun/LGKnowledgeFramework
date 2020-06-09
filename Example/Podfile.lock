@@ -44,7 +44,7 @@ PODS:
   - LGAlertHUD/YJSheetView (1.1.3):
     - Masonry
     - YJExtensions
-  - LGKnowledgeFramework (2.0.8):
+  - LGKnowledgeFramework (2.0.9):
     - BlocksKit
     - LGAlertHUD
     - Masonry
@@ -65,11 +65,11 @@ PODS:
   - LGLog/YJCocoaLumberjack (1.0.2)
   - Masonry (1.1.0)
   - MJExtension (3.2.1)
-  - MJRefresh (3.4.1)
+  - MJRefresh (3.4.3)
   - Reachability (3.2)
-  - SDWebImage (5.7.2):
-    - SDWebImage/Core (= 5.7.2)
-  - SDWebImage/Core (5.7.2)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - YJActivityIndicatorView (1.0.0)
   - YJBaseModule (1.2.7):
     - YJBaseModule/Base (= 1.2.7)
@@ -102,19 +102,19 @@ PODS:
     - YJExtensions
   - YJCoreText/YJDrawView (1.0.2):
     - YJCoreText/Model
-  - YJExtensions (1.2.7):
-    - YJExtensions/Foundation (= 1.2.7)
-    - YJExtensions/UIKit (= 1.2.7)
-    - YJExtensions/YJEGumbo (= 1.2.7)
-    - YJExtensions/YJEHpple (= 1.2.7)
-  - YJExtensions/Foundation (1.2.7):
+  - YJExtensions (1.2.8):
+    - YJExtensions/Foundation (= 1.2.8)
+    - YJExtensions/UIKit (= 1.2.8)
+    - YJExtensions/YJEGumbo (= 1.2.8)
+    - YJExtensions/YJEHpple (= 1.2.8)
+  - YJExtensions/Foundation (1.2.8):
     - YJExtensions/YJEHpple
-  - YJExtensions/UIKit (1.2.7):
+  - YJExtensions/UIKit (1.2.8):
     - YJExtensions/Foundation
-  - YJExtensions/YJEGumbo (1.2.7):
-    - YJExtensions/YJEGumbo/src (= 1.2.7)
-  - YJExtensions/YJEGumbo/src (1.2.7)
-  - YJExtensions/YJEHpple (1.2.7)
+  - YJExtensions/YJEGumbo (1.2.8):
+    - YJExtensions/YJEGumbo/src (= 1.2.8)
+  - YJExtensions/YJEGumbo/src (1.2.8)
+  - YJExtensions/YJEHpple (1.2.8)
   - YJImageBrowser (1.0.1):
     - YJImageBrowser/Const (= 1.0.1)
     - YJImageBrowser/ProgressView (= 1.0.1)
@@ -126,7 +126,7 @@ PODS:
     - SDWebImage
     - YJImageBrowser/Const
     - YJImageBrowser/ProgressView
-  - YJNetManager (1.2.1):
+  - YJNetManager (1.2.2):
     - AFNetworking
     - LGLog
     - Reachability
@@ -141,13 +141,13 @@ PODS:
     - YJExtensions
     - YJNetManager
     - YJTaskMark/kuyou
-  - YJUtils (1.1.3):
-    - YJUtils/YJAudioMerger (= 1.1.3)
-    - YJUtils/YJAudioPlayer (= 1.1.3)
-    - YJUtils/YJMediaCutter (= 1.1.3)
-  - YJUtils/YJAudioMerger (1.1.3)
-  - YJUtils/YJAudioPlayer (1.1.3)
-  - YJUtils/YJMediaCutter (1.1.3)
+  - YJUtils (1.1.4):
+    - YJUtils/YJAudioMerger (= 1.1.4)
+    - YJUtils/YJAudioPlayer (= 1.1.4)
+    - YJUtils/YJMediaCutter (= 1.1.4)
+  - YJUtils/YJAudioMerger (1.1.4)
+  - YJUtils/YJAudioPlayer (1.1.4)
+  - YJUtils/YJMediaCutter (1.1.4)
 
 DEPENDENCIES:
   - LGKnowledgeFramework (from `../`)
@@ -181,22 +181,22 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   LGAlertHUD: d14fa1d2ab68418cf8f0a1fcb1a8d9eee6a4841b
-  LGKnowledgeFramework: 3092cfaa2fc5d3f2ccd47ee37b2464e2b8b8cb14
+  LGKnowledgeFramework: 69875c9b629b9d646ed293338daed30b5276b6a3
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
-  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
   YJBaseModule: ec45e6b9e806d6c3a0944960eec22d2b69bc6772
   YJCoreText: a595eb95f78f34000547278fd856fbe8ac43e0af
-  YJExtensions: e7de9b98bd279a704321c795eb4ff6975fac2167
+  YJExtensions: f38d0c8b05ea3cd52bde07bdd35bb913065abbc8
   YJImageBrowser: d879399f8ee957f79333b957c64f5d8258b32277
-  YJNetManager: de44dffe2182de1b1128b646338096ba0626d2c9
+  YJNetManager: 2de45698355adda77563015b1bf884d468a688db
   YJPresentAnimation: 58af2bfff17028cb286ecd442d418af8997f8740
   YJTaskMark: af9e04cc65cc35344a9286e534aeaa810117f637
-  YJUtils: da9d4d2129144bf99b1ca057df26351cbfb9360e
+  YJUtils: ea9694342497fc495c97503f19355e4d576c83fc
 
 PODFILE CHECKSUM: ef244d04ca3bf8a5209b754c03e698e1a8ec2f6e
 
