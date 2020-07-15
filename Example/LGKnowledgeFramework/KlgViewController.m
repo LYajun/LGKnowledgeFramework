@@ -32,7 +32,7 @@
     if (pageIndex == 1) {
         [self indicatorViewStart];
     }
-    NSString *urlStr = [NSString stringWithFormat:@"%@/DebrisPublicWeb.asmx/WS_Get_SubjectKlgByCondition?SubjectCode=C&VersionCode=H&TypeName=%@&PageIndex=%li&PageSize=%li",self.klgUrl,self.TypeName,self.pageIndex,self.pageSize];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/DebrisPublicWeb.asmx/WS_Get_SubjectKlgByCondition?SubjectCode=C&VersionCode=%@&TypeName=%@&PageIndex=%li&PageSize=%li",self.klgUrl,self.versionCode,self.TypeName,self.pageIndex,self.pageSize];
     NSURL *requestUrl = [NSURL URLWithString:[urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestUrl];
     request.timeoutInterval = 15;

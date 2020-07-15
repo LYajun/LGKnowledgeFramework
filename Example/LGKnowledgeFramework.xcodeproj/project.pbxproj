@@ -25,6 +25,9 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9FCDB399A1E4586C786D1634 /* Pods_LGKnowledgeFramework_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFB1D1A77C9D5674FB1E12C /* Pods_LGKnowledgeFramework_Example.framework */; };
 		BA14F25D2331C919001E5891 /* KlgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA14F25C2331C918001E5891 /* KlgViewController.m */; };
+		BADE2E9624A3502E00969A7F /* YJSegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE2E8F24A3502D00969A7F /* YJSegmentItem.m */; };
+		BADE2E9724A3502E00969A7F /* YJDynamicSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE2E9124A3502D00969A7F /* YJDynamicSegment.m */; };
+		BADE2E9824A3502E00969A7F /* YJSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE2E9224A3502D00969A7F /* YJSegment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,7 @@
 /* Begin PBXFileReference section */
 		348C8456F4A6EBB1846A85D3 /* Pods-LGKnowledgeFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGKnowledgeFramework_Example.debug.xcconfig"; path = "Target Support Files/Pods-LGKnowledgeFramework_Example/Pods-LGKnowledgeFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		520D75A4C565896C7A75AB25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* LGKnowledgeFramework_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGKnowledgeFramework_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* 知识点课件.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "知识点课件.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -66,6 +69,12 @@
 		AA3BAA3E3A53945B0719E74D /* Pods-LGKnowledgeFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGKnowledgeFramework_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LGKnowledgeFramework_Tests/Pods-LGKnowledgeFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA14F25B2331C918001E5891 /* KlgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlgViewController.h; sourceTree = "<group>"; };
 		BA14F25C2331C918001E5891 /* KlgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlgViewController.m; sourceTree = "<group>"; };
+		BADE2E8D24A3502D00969A7F /* YJDynamicSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJDynamicSegment.h; sourceTree = "<group>"; };
+		BADE2E8F24A3502D00969A7F /* YJSegmentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSegmentItem.m; sourceTree = "<group>"; };
+		BADE2E9024A3502D00969A7F /* YJSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSegment.h; sourceTree = "<group>"; };
+		BADE2E9124A3502D00969A7F /* YJDynamicSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJDynamicSegment.m; sourceTree = "<group>"; };
+		BADE2E9224A3502D00969A7F /* YJSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSegment.m; sourceTree = "<group>"; };
+		BADE2E9324A3502D00969A7F /* YJSegmentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSegmentItem.h; sourceTree = "<group>"; };
 		BF6369D73408D6273C6EC511 /* LGKnowledgeFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LGKnowledgeFramework.podspec; path = ../LGKnowledgeFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BFEB280BF4C1C5B341D73AF4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EAF5A164D0FB1F2D5275A91E /* Pods_LGKnowledgeFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LGKnowledgeFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +122,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* LGKnowledgeFramework_Example.app */,
+				6003F58A195388D20070C39A /* 知识点课件.app */,
 				6003F5AE195388D20070C39A /* LGKnowledgeFramework_Tests.xctest */,
 			);
 			name = Products;
@@ -135,6 +144,7 @@
 		6003F593195388D20070C39A /* Example for LGKnowledgeFramework */ = {
 			isa = PBXGroup;
 			children = (
+				BADE2E8C24A3502D00969A7F /* YJSegment */,
 				6003F59C195388D20070C39A /* YJAppDelegate.h */,
 				6003F59D195388D20070C39A /* YJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -190,6 +200,19 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		BADE2E8C24A3502D00969A7F /* YJSegment */ = {
+			isa = PBXGroup;
+			children = (
+				BADE2E8D24A3502D00969A7F /* YJDynamicSegment.h */,
+				BADE2E9124A3502D00969A7F /* YJDynamicSegment.m */,
+				BADE2E9024A3502D00969A7F /* YJSegment.h */,
+				BADE2E9224A3502D00969A7F /* YJSegment.m */,
+				BADE2E9324A3502D00969A7F /* YJSegmentItem.h */,
+				BADE2E8F24A3502D00969A7F /* YJSegmentItem.m */,
+			);
+			path = YJSegment;
+			sourceTree = "<group>";
+		};
 		C88656E3458B7036174B9DCE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +244,7 @@
 			);
 			name = LGKnowledgeFramework_Example;
 			productName = LGKnowledgeFramework;
-			productReference = 6003F58A195388D20070C39A /* LGKnowledgeFramework_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* 知识点课件.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* LGKnowledgeFramework_Tests */ = {
@@ -425,9 +448,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADE2E9724A3502E00969A7F /* YJDynamicSegment.m in Sources */,
 				6003F59E195388D20070C39A /* YJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* YJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				BADE2E9824A3502E00969A7F /* YJSegment.m in Sources */,
+				BADE2E9624A3502E00969A7F /* YJSegmentItem.m in Sources */,
 				BA14F25D2331C919001E5891 /* KlgViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,14 +582,17 @@
 			baseConfigurationReference = 348C8456F4A6EBB1846A85D3 /* Pods-LGKnowledgeFramework_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Z35S33J39R;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LGKnowledgeFramework/LGKnowledgeFramework-Prefix.pch";
 				INFOPLIST_FILE = "LGKnowledgeFramework/LGKnowledgeFramework-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 2.1.1;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.knowledge;
+				PRODUCT_NAME = "知识点课件";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -574,14 +603,17 @@
 			baseConfigurationReference = 7987E7F3F773CE80F159C50C /* Pods-LGKnowledgeFramework_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Z35S33J39R;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LGKnowledgeFramework/LGKnowledgeFramework-Prefix.pch";
 				INFOPLIST_FILE = "LGKnowledgeFramework/LGKnowledgeFramework-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 2.1.1;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.knowledge;
+				PRODUCT_NAME = "知识点课件";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

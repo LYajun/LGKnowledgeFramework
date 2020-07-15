@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "LGKnowledgeFramework_Example.app"
+               BuildableName = "&#x77e5;&#x8bc6;&#x70b9;&#x8bfe;&#x4ef6;.app"
                BlueprintName = "LGKnowledgeFramework_Example"
                ReferencedContainer = "container:LGKnowledgeFramework.xcodeproj">
             </BuildableReference>
@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "&#x77e5;&#x8bc6;&#x70b9;&#x8bfe;&#x4ef6;.app"
+            BlueprintName = "LGKnowledgeFramework_Example"
+            ReferencedContainer = "container:LGKnowledgeFramework.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -39,17 +48,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LGKnowledgeFramework_Example.app"
-            BlueprintName = "LGKnowledgeFramework_Example"
-            ReferencedContainer = "container:LGKnowledgeFramework.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -66,13 +64,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LGKnowledgeFramework_Example.app"
+            BuildableName = "&#x77e5;&#x8bc6;&#x70b9;&#x8bfe;&#x4ef6;.app"
             BlueprintName = "LGKnowledgeFramework_Example"
             ReferencedContainer = "container:LGKnowledgeFramework.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -85,7 +81,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "LGKnowledgeFramework_Example.app"
+            BuildableName = "&#x77e5;&#x8bc6;&#x70b9;&#x8bfe;&#x4ef6;.app"
             BlueprintName = "LGKnowledgeFramework_Example"
             ReferencedContainer = "container:LGKnowledgeFramework.xcodeproj">
          </BuildableReference>

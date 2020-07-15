@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KlgViewController : UIViewController
+@property (nonatomic,copy) NSString *versionCode;
 @property (nonatomic,copy) NSString *TypeName;
 @property (nonatomic,copy) NSString *klgUrl;
 @end
