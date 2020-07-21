@@ -106,7 +106,8 @@
     NSDictionary *dic = self.dataArray[indexPath.row];
     /** 服务器地址 */
     [LGKnowledgeManager defaultManager].apiUrl = self.klgUrl;
-
+    [LGKnowledgeManager defaultManager].orientationMaskLandscape = YES;
+    
     /** 是否只开放知识点卡片 */
 //    [LGKnowledgeManager defaultManager].onlyKlgCark = YES;
     /** 知识点编码 */

@@ -10,7 +10,7 @@
 #import "YJBManager.h"
 
 @interface YJBTableView ()
-
+@property (nonatomic,strong) MJRefreshAutoNormalFooter *currentFooter;
 @end
 @implementation YJBTableView
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
@@ -56,6 +56,13 @@
         footer.stateLabel.font = [UIFont systemFontOfSize:[YJBManager defaultManager].refreshFooterStateTitleSize];
         footer.stateLabel.textColor = [YJBManager defaultManager].refreshFooterStateTitleColor;
         self.mj_footer = footer;
+        self.currentFooter = footer;
+    }
+}
+- (void)setHideFooterStateLab:(BOOL)hideFooterStateLab{
+    _hideFooterStateLab = hideFooterStateLab;
+    if (self.currentFooter) {
+        self.currentFooter.stateLabel.hidden = hideFooterStateLab;
     }
 }
 - (void)endHeaderRefreshing{

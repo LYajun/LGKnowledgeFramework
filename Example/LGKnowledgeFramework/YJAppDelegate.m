@@ -50,5 +50,11 @@
 {
     
 }
-
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//    
+////    if (self.allowRotation) {
+//        return  UIInterfaceOrientationMaskAllButUpsideDown;
+////    }
+////    return UIInterfaceOrientationMaskPortrait;
+//}
 @end

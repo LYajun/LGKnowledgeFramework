@@ -56,23 +56,40 @@
 
 - (void)setImageUrl:(NSString *)imageUrl{
     _imageUrl = imageUrl;
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage yj_imageNamed:@"yj_img_placeholder" atBundle:YJImageBrowserBundle()]];
+
     __weak typeof(self) weakSelf = self;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (expectedSize > 0) {
-                    weakSelf.progressView.titleProgress = receivedSize * 1.0 / expectedSize;
-                }else{
-                    weakSelf.progressView.titleProgress = 0;
-                }
-            });
+//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if (expectedSize > 0) {
+//                    weakSelf.progressView.titleProgress = receivedSize * 1.0 / expectedSize;
+//                }else{
+//                    weakSelf.progressView.titleProgress = 0;
+//                }
+//            });
+//    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//         dispatch_async(dispatch_get_main_queue(), ^{
+//             weakSelf.progressView.hidden = YES;
+//             if (error) {
+//                 weakSelf.imageView.image = [UIImage yj_imageNamed:@"yj_img_bad" atBundle:YJImageBrowserBundle()];
+//             }
+//         });
+//    }];
+    
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imageUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]] placeholderImage:[UIImage yj_imageNamed:@"yj_img_placeholder" atBundle:YJImageBrowserBundle()] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (expectedSize > 0) {
+                weakSelf.progressView.titleProgress = receivedSize * 1.0 / expectedSize;
+            }else{
+                weakSelf.progressView.titleProgress = 0;
+            }
+        });
     } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-         dispatch_async(dispatch_get_main_queue(), ^{
-             weakSelf.progressView.hidden = YES;
-             if (error) {
-                 weakSelf.imageView.image = [UIImage yj_imageNamed:@"yj_img_bad" atBundle:YJImageBrowserBundle()];
-             }
-         });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.progressView.hidden = YES;
+            if (error) {
+                weakSelf.imageView.image = [UIImage yj_imageNamed:@"yj_img_bad" atBundle:YJImageBrowserBundle()];
+            }
+        });
     }];
 }
 #pragma mark - 指定缩放视图（必须得是scrollView的子视图）

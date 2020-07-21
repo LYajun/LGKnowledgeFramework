@@ -112,7 +112,8 @@
         _pageLab = [[UILabel alloc] initWithFrame:CGRectMake(LG_ScreenWidth - 35 - 10, 44 + [self yj_stateBarSpace], 35, 20)];
         _pageLab.textAlignment = NSTextAlignmentCenter;
         _pageLab.textColor = [UIColor whiteColor];
-       _pageLab.backgroundColor = [UIColor lightGrayColor];
+//        _pageLab.backgroundColor = LG_ColorWithHexA(0x000000, 0.4);
+        _pageLab.backgroundColor = [UIColor lightGrayColor];
         _pageLab.font = LG_SysFont(15);
         [_pageLab yj_clipLayerWithRadius:3 width:1 color:[UIColor lightGrayColor]];
     }

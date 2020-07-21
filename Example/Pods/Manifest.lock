@@ -44,7 +44,10 @@ PODS:
   - LGAlertHUD/YJSheetView (1.1.3):
     - Masonry
     - YJExtensions
-  - LGKnowledgeFramework (2.1.1):
+  - LGBundle/Bundle (1.0.3):
+    - LGBundle/Manager
+  - LGBundle/Manager (1.0.3)
+  - LGKnowledgeFramework (2.1.2):
     - BlocksKit
     - LGAlertHUD
     - Masonry
@@ -64,20 +67,20 @@ PODS:
     - LGLog/YJCocoaLumberjack
   - LGLog/YJCocoaLumberjack (1.0.2)
   - Masonry (1.1.0)
-  - MJExtension (3.2.1)
+  - MJExtension (3.2.2)
   - MJRefresh (3.4.3)
   - Reachability (3.2)
-  - SDWebImage (5.8.0):
-    - SDWebImage/Core (= 5.8.0)
-  - SDWebImage/Core (5.8.0)
+  - SDWebImage (5.8.3):
+    - SDWebImage/Core (= 5.8.3)
+  - SDWebImage/Core (5.8.3)
   - YJActivityIndicatorView (1.0.0)
-  - YJBaseModule (1.2.7):
-    - YJBaseModule/Base (= 1.2.7)
-    - YJBaseModule/Manager (= 1.2.7)
-    - YJBaseModule/MarqueeLabel (= 1.2.7)
-    - YJBaseModule/YJBHpple (= 1.2.7)
-    - YJBaseModule/YJBWebView (= 1.2.7)
-  - YJBaseModule/Base (1.2.7):
+  - YJBaseModule (1.2.9):
+    - YJBaseModule/Base (= 1.2.9)
+    - YJBaseModule/Manager (= 1.2.9)
+    - YJBaseModule/MarqueeLabel (= 1.2.9)
+    - YJBaseModule/YJBHpple (= 1.2.9)
+    - YJBaseModule/YJBWebView (= 1.2.9)
+  - YJBaseModule/Base (1.2.9):
     - LGAlertHUD
     - Masonry
     - MJExtension
@@ -85,11 +88,12 @@ PODS:
     - YJActivityIndicatorView
     - YJBaseModule/Manager
     - YJExtensions
-  - YJBaseModule/Manager (1.2.7):
+  - YJBaseModule/Manager (1.2.9):
+    - LGBundle/Bundle
     - YJExtensions
-  - YJBaseModule/MarqueeLabel (1.2.7)
-  - YJBaseModule/YJBHpple (1.2.7)
-  - YJBaseModule/YJBWebView (1.2.7):
+  - YJBaseModule/MarqueeLabel (1.2.9)
+  - YJBaseModule/YJBHpple (1.2.9)
+  - YJBaseModule/YJBWebView (1.2.9):
     - Masonry
     - YJBaseModule/Manager
     - YJBaseModule/MarqueeLabel
@@ -115,14 +119,14 @@ PODS:
     - YJExtensions/YJEGumbo/src (= 1.2.8)
   - YJExtensions/YJEGumbo/src (1.2.8)
   - YJExtensions/YJEHpple (1.2.8)
-  - YJImageBrowser (1.0.1):
-    - YJImageBrowser/Const (= 1.0.1)
-    - YJImageBrowser/ProgressView (= 1.0.1)
-    - YJImageBrowser/YJImageBrowserView (= 1.0.1)
-  - YJImageBrowser/Const (1.0.1):
+  - YJImageBrowser (1.0.2):
+    - YJImageBrowser/Const (= 1.0.2)
+    - YJImageBrowser/ProgressView (= 1.0.2)
+    - YJImageBrowser/YJImageBrowserView (= 1.0.2)
+  - YJImageBrowser/Const (1.0.2):
     - YJExtensions
-  - YJImageBrowser/ProgressView (1.0.1)
-  - YJImageBrowser/YJImageBrowserView (1.0.1):
+  - YJImageBrowser/ProgressView (1.0.2)
+  - YJImageBrowser/YJImageBrowserView (1.0.2):
     - SDWebImage
     - YJImageBrowser/Const
     - YJImageBrowser/ProgressView
@@ -157,6 +161,7 @@ SPEC REPOS:
     - AFNetworking
     - BlocksKit
     - LGAlertHUD
+    - LGBundle
     - LGLog
     - Masonry
     - MJExtension
@@ -181,18 +186,19 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   LGAlertHUD: d14fa1d2ab68418cf8f0a1fcb1a8d9eee6a4841b
-  LGKnowledgeFramework: 46e3dbf5c45e837e9377e76b0c25298489ad3f34
+  LGBundle: 14ca72907347cbeaa0cfa62f80f387d093e0d4ce
+  LGKnowledgeFramework: 30e5ea205ce47e89dd8aea06beb8c97df2467199
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
-  YJBaseModule: ec45e6b9e806d6c3a0944960eec22d2b69bc6772
+  YJBaseModule: d1a40035009c6c4b797096bfa33c2f2439d1358f
   YJCoreText: a595eb95f78f34000547278fd856fbe8ac43e0af
   YJExtensions: f38d0c8b05ea3cd52bde07bdd35bb913065abbc8
-  YJImageBrowser: d879399f8ee957f79333b957c64f5d8258b32277
+  YJImageBrowser: 4e7832362366afd752f70be0372927ff9359ef02
   YJNetManager: 2de45698355adda77563015b1bf884d468a688db
   YJPresentAnimation: 58af2bfff17028cb286ecd442d418af8997f8740
   YJTaskMark: af9e04cc65cc35344a9286e534aeaa810117f637

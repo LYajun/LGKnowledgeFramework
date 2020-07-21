@@ -79,11 +79,16 @@
             [weakSelf.ownTableView endFooterRefreshing];
         }
         [weakSelf.ownTableView reloadData];
+        if (weakSelf.ownController) {
+            [weakSelf.ownController yj_loadTableData];
+        }
+        weakSelf.ownTableView.hideFooterStateLab = weakSelf.models.count == 0;
     } failed:^(NSError * _Nonnull error) {
         [LGAlert showStatus:@"加载失败"];
         [weakSelf.ownTableView endHeaderRefreshing];
         [weakSelf.ownTableView endFooterRefreshing];
         weakSelf.totalCount = 0;
+         weakSelf.ownTableView.hideFooterStateLab = weakSelf.models.count == 0;
     }];
 }
 - (void)yj_loadTableDataWithPage:(NSInteger)page success:(void (^)(BOOL))success failed:(void (^)(NSError * _Nonnull))failed{
@@ -132,11 +137,16 @@
             [weakSelf.ownCollectionView endFooterRefreshing];
         }
         [weakSelf.ownCollectionView yj_reloadData];
+        if (weakSelf.ownController) {
+           [weakSelf.ownController yj_loadTableData];
+        }
+        weakSelf.ownCollectionView.hideFooterStateLab = weakSelf.models.count == 0;
     } failed:^(NSError * _Nonnull error) {
         [LGAlert showStatus:@"加载失败"];
         [weakSelf.ownCollectionView endHeaderRefreshing];
         [weakSelf.ownCollectionView endFooterRefreshing];
         weakSelf.totalCount = 0;
+        weakSelf.ownCollectionView.hideFooterStateLab = weakSelf.models.count == 0;
     }];
 }
 
@@ -168,6 +178,9 @@
 
 #pragma mark - 数据处理
 - (void)yj_handleResponseDataList:(NSArray *)dataList modelClass:(Class)modelClass totalCount:(NSInteger)totalCount success:(void (^)(BOOL))success{
+    if (self. yj_isRemoveAll) {
+        [self yj_removeAllData];
+    }
     BOOL noMore = NO;
     if (dataList && dataList.count > 0) {
         if (self.currentPage != self.startPage) {
@@ -180,9 +193,6 @@
             if (dataList.count < self.pageSize || (totalCount > 0 && dataList.count == totalCount)) {
                 noMore = YES;
             }
-        }
-        if (self. yj_isRemoveAll) {
-            [self yj_removeAllData];
         }
         for (NSDictionary *dict in dataList) {
             YJBModel *model = [[modelClass alloc] initWithDictionary:dict];

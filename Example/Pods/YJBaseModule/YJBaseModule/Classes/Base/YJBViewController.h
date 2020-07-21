@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)yj_updateData;
 - (void)yj_loadErrorUpdate;
 
+- (void)yj_loadTableData;
+
 /** 加载视图与顶部的间距 */
 @property (nonatomic,assign) CGFloat yj_loadingViewTopSpace;
 

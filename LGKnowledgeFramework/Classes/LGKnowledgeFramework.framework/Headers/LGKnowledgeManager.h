@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, LGKnowledgeTestLevel) {
 @interface LGKnowledgeManager : NSObject
 /** 测试使用，指定训练等级(初中高,默认自动通过知识点ID判断) */
 @property (nonatomic, assign) LGKnowledgeTestLevel testLevel;
+/** 显示横屏 */
+@property (nonatomic,assign) BOOL orientationMaskLandscape;
 /** 知识点服务器地址 */
 @property (nonatomic,copy) NSString *apiUrl;
 /** 资源服务器基础地址,可以不传 */
