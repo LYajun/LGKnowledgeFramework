@@ -213,7 +213,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
             NSString *portType =previousOutput.portType;
             if ([portType isEqualToString:AVAudioSessionPortHeadphones]) {
                 // 拔掉耳机继续播放
-                if (self.isPlaying) [self play];
+                if (self.isPlaying) [self playPlayback];
             }
         }
             break;
@@ -276,7 +276,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
         }
     } else if ([keyPath isEqualToString:kPlaybackLikelyToKeepUp]) {
         //由于 AVPlayer 缓存不足就会自动暂停,所以缓存充足了需要手动播放,才能继续播放
-        if (_isPlaying) [self play];
+        if (_isPlaying) [self playPlayback];
         if (self.delegate && [self.delegate respondsToSelector:@selector(yj_audioPlayerPlaybackLikelyToKeepUp)]) {
             [self.delegate yj_audioPlayerPlaybackLikelyToKeepUp];
         }
@@ -288,7 +288,7 @@ static NSString * const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
             [self.delegate yj_audioPlayerReadyToPlay];
         }
         //推荐将音视频播放放在这里
-        if (_isPlaying) [self play];
+        if (_isPlaying) [self playPlayback];
     } else {
         [self invalidate];
         if (self.delegate && [self.delegate respondsToSelector:@selector(yj_audioPlayerDecodeError)]) {

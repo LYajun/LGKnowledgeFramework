@@ -82,4 +82,14 @@
     }
     return _speechID;
 }
+- (NSString *)errorMsg{
+    if (_errorMsg) {
+        if ([_errorMsg.lowercaseString containsString:@"audio too short"]) {
+            _errorMsg = @"录音时间太短了";
+        }else if ([_errorMsg.lowercaseString containsString:@"no valid audio data"]){
+            _errorMsg = @"无效的音频";
+        }
+    }
+    return _errorMsg;
+}
 @end

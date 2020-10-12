@@ -40,7 +40,10 @@ typedef NS_ENUM(NSInteger,YJResponseType){
 
 + (YJNetManager *)defaultManager;
 + (YJNetManager *)createManager;
-- (void)cancelRequest;
+- (void)cancelCurrentRequest;
+
+- (void)readyRecordAllRequest;
+- (void)cancelAllRequest;
 /** 填充网址 */
 - (YJNetManager* (^)(NSString *url))setRequest;
 

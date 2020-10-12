@@ -29,25 +29,25 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - LGAlertHUD (1.1.3):
-    - LGAlertHUD/AlertView (= 1.1.3)
-    - LGAlertHUD/AnswerAlertView (= 1.1.3)
-    - LGAlertHUD/YJSheetView (= 1.1.3)
+  - LGAlertHUD (1.1.4):
+    - LGAlertHUD/AlertView (= 1.1.4)
+    - LGAlertHUD/AnswerAlertView (= 1.1.4)
+    - LGAlertHUD/YJSheetView (= 1.1.4)
     - Masonry
     - YJExtensions
-  - LGAlertHUD/AlertView (1.1.3):
+  - LGAlertHUD/AlertView (1.1.4):
     - Masonry
     - YJExtensions
-  - LGAlertHUD/AnswerAlertView (1.1.3):
+  - LGAlertHUD/AnswerAlertView (1.1.4):
     - Masonry
     - YJExtensions
-  - LGAlertHUD/YJSheetView (1.1.3):
+  - LGAlertHUD/YJSheetView (1.1.4):
     - Masonry
     - YJExtensions
-  - LGBundle/Bundle (1.0.3):
+  - LGBundle/Bundle (1.0.4):
     - LGBundle/Manager
-  - LGBundle/Manager (1.0.3)
-  - LGKnowledgeFramework (2.1.2):
+  - LGBundle/Manager (1.0.4)
+  - LGKnowledgeFramework (2.1.5):
     - BlocksKit
     - LGAlertHUD
     - Masonry
@@ -56,7 +56,7 @@ PODS:
     - YJCoreText
     - YJExtensions
     - YJImageBrowser
-    - YJNetManager
+    - YJNetManager (= 1.2.3)
     - YJPresentAnimation
     - YJTaskMark
     - YJUtils
@@ -68,11 +68,11 @@ PODS:
   - LGLog/YJCocoaLumberjack (1.0.2)
   - Masonry (1.1.0)
   - MJExtension (3.2.2)
-  - MJRefresh (3.4.3)
+  - MJRefresh (3.5.0)
   - Reachability (3.2)
-  - SDWebImage (5.8.3):
-    - SDWebImage/Core (= 5.8.3)
-  - SDWebImage/Core (5.8.3)
+  - SDWebImage (5.9.2):
+    - SDWebImage/Core (= 5.9.2)
+  - SDWebImage/Core (5.9.2)
   - YJActivityIndicatorView (1.0.0)
   - YJBaseModule (1.2.9):
     - YJBaseModule/Base (= 1.2.9)
@@ -106,19 +106,20 @@ PODS:
     - YJExtensions
   - YJCoreText/YJDrawView (1.0.2):
     - YJCoreText/Model
-  - YJExtensions (1.2.8):
-    - YJExtensions/Foundation (= 1.2.8)
-    - YJExtensions/UIKit (= 1.2.8)
-    - YJExtensions/YJEGumbo (= 1.2.8)
-    - YJExtensions/YJEHpple (= 1.2.8)
-  - YJExtensions/Foundation (1.2.8):
+  - YJExtensions (1.3.1):
+    - YJExtensions/Foundation (= 1.3.1)
+    - YJExtensions/UIKit (= 1.3.1)
+    - YJExtensions/YJEGumbo (= 1.3.1)
+    - YJExtensions/YJEHpple (= 1.3.1)
+  - YJExtensions/Foundation (1.3.1):
+    - YJExtensions/YJEGumbo
     - YJExtensions/YJEHpple
-  - YJExtensions/UIKit (1.2.8):
+  - YJExtensions/UIKit (1.3.1):
     - YJExtensions/Foundation
-  - YJExtensions/YJEGumbo (1.2.8):
-    - YJExtensions/YJEGumbo/src (= 1.2.8)
-  - YJExtensions/YJEGumbo/src (1.2.8)
-  - YJExtensions/YJEHpple (1.2.8)
+  - YJExtensions/YJEGumbo (1.3.1):
+    - YJExtensions/YJEGumbo/src (= 1.3.1)
+  - YJExtensions/YJEGumbo/src (1.3.1)
+  - YJExtensions/YJEHpple (1.3.1)
   - YJImageBrowser (1.0.2):
     - YJImageBrowser/Const (= 1.0.2)
     - YJImageBrowser/ProgressView (= 1.0.2)
@@ -130,28 +131,24 @@ PODS:
     - SDWebImage
     - YJImageBrowser/Const
     - YJImageBrowser/ProgressView
-  - YJNetManager (1.2.2):
+  - YJNetManager (1.2.3):
     - AFNetworking
     - LGLog
     - Reachability
     - YJExtensions
   - YJPresentAnimation (1.0.2)
-  - YJTaskMark (1.1.3):
-    - YJTaskMark/kuyou (= 1.1.3)
-    - YJTaskMark/Util (= 1.1.3)
-  - YJTaskMark/kuyou (1.1.3)
-  - YJTaskMark/Util (1.1.3):
+  - YJTaskMark (2.0.4):
     - LGAlertHUD
+    - MJExtension
     - YJExtensions
     - YJNetManager
-    - YJTaskMark/kuyou
-  - YJUtils (1.1.4):
-    - YJUtils/YJAudioMerger (= 1.1.4)
-    - YJUtils/YJAudioPlayer (= 1.1.4)
-    - YJUtils/YJMediaCutter (= 1.1.4)
-  - YJUtils/YJAudioMerger (1.1.4)
-  - YJUtils/YJAudioPlayer (1.1.4)
-  - YJUtils/YJMediaCutter (1.1.4)
+  - YJUtils (1.1.5):
+    - YJUtils/YJAudioMerger (= 1.1.5)
+    - YJUtils/YJAudioPlayer (= 1.1.5)
+    - YJUtils/YJMediaCutter (= 1.1.5)
+  - YJUtils/YJAudioMerger (1.1.5)
+  - YJUtils/YJAudioPlayer (1.1.5)
+  - YJUtils/YJMediaCutter (1.1.5)
 
 DEPENDENCIES:
   - LGKnowledgeFramework (from `../`)
@@ -185,24 +182,24 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  LGAlertHUD: d14fa1d2ab68418cf8f0a1fcb1a8d9eee6a4841b
-  LGBundle: 14ca72907347cbeaa0cfa62f80f387d093e0d4ce
-  LGKnowledgeFramework: 30e5ea205ce47e89dd8aea06beb8c97df2467199
+  LGAlertHUD: d85ccbabb15c09cca6e96850caf30a9fdf23dc48
+  LGBundle: adaa76cfc3924da41dbac1e9779ce00fa2e85d01
+  LGKnowledgeFramework: cfc32b774544aeba918f8ee77514c18e4ef51793
   LGLog: a58e542c6c99755d1b8eca492b2acf70a3115731
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
+  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
   YJActivityIndicatorView: f51112fa59d69762bd6147cf0da573ff2a9a0215
   YJBaseModule: d1a40035009c6c4b797096bfa33c2f2439d1358f
   YJCoreText: a595eb95f78f34000547278fd856fbe8ac43e0af
-  YJExtensions: f38d0c8b05ea3cd52bde07bdd35bb913065abbc8
+  YJExtensions: 64ccb4405fadc5b77b4e8dea9aad864db582073a
   YJImageBrowser: 4e7832362366afd752f70be0372927ff9359ef02
-  YJNetManager: 2de45698355adda77563015b1bf884d468a688db
+  YJNetManager: ad212a66ffebc93649542e86badb71a5c53681c6
   YJPresentAnimation: 58af2bfff17028cb286ecd442d418af8997f8740
-  YJTaskMark: af9e04cc65cc35344a9286e534aeaa810117f637
-  YJUtils: ea9694342497fc495c97503f19355e4d576c83fc
+  YJTaskMark: d1db4b2329a63ec8b65ee70133a5e2795cdca41d
+  YJUtils: 41d33220656b74ac0fd4fe3c2e19f45726dc06c0
 
 PODFILE CHECKSUM: ef244d04ca3bf8a5209b754c03e698e1a8ec2f6e
 

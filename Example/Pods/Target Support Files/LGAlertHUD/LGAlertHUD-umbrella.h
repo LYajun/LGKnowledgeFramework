@@ -12,6 +12,7 @@
 
 #import "LGAlertHUD.h"
 #import "LGProgressHUD.h"
+#import "LGTipsAlertView.h"
 #import "YJKlgEmptyAlert.h"
 #import "YJLancooAlert.h"
 #import "YJVipControlView.h"

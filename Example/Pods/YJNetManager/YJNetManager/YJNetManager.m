@@ -22,6 +22,7 @@
 @property (nonatomic,assign) NSTimeInterval wTimeout;
 @property (nonatomic,copy) NSString *wCacheDir;
 @property (nonatomic,strong) NSURLSessionDataTask *currentDataTask;
+@property (nonatomic,strong) NSMutableArray *dataTaskkArr;
 @end
 
 @implementation YJNetManager
@@ -52,7 +53,16 @@
     _wUploadModel = nil;
     _wTimeout = 30;
 }
-- (void)cancelRequest{
+- (void)readyRecordAllRequest{
+    [self.dataTaskkArr removeAllObjects];
+}
+- (void)cancelAllRequest{
+    for (NSURLSessionDataTask *dataTask in self.dataTaskkArr) {
+       [dataTask cancel];
+    }
+    [self.dataTaskkArr removeAllObjects];
+}
+- (void)cancelCurrentRequest{
     if (self.currentDataTask) {
         [self.currentDataTask cancel];
     }
@@ -90,6 +100,7 @@
     }];
     [dataTask resume];
     self.currentDataTask = dataTask;
+    [self.dataTaskkArr addObject:dataTask];
 }
 - (void)postRequestWithSuccess:(void(^)(id response))success failure:(void (^)(NSError * error))failure{
     NSString *originUrl = self.wUrl;
@@ -115,6 +126,7 @@
     }];
     [dataTask resume];
     self.currentDataTask = dataTask;
+    [self.dataTaskkArr addObject:dataTask];
 }
 - (void)txtRequestWithSuccess:(void(^)(id response))success failure:(void (^)(NSError * error))failure{
     if (![NSFileManager yj_fileIsExistOfPath:self.wUrl]) {
@@ -125,6 +137,14 @@
     YJResponseType responseType = self.wResponseType;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *str = [[NSString alloc] initWithContentsOfFile:urlStr encoding:NSUTF8StringEncoding error:nil];
+        if (!str){
+            //如果之前不能解码，现在使用GBK解码
+            str = [[NSString alloc] initWithContentsOfFile:urlStr encoding:0x80000632 error:nil];
+        }
+        if (!str) {
+            //再使用GB18030解码
+            str = [[NSString alloc] initWithContentsOfFile:urlStr encoding:0x80000631 error:nil];
+        }
         if (responseType == YJResponseTypeString) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (str && str.length > 0) {
@@ -216,6 +236,7 @@
     }];
     [dataTask resume];
     self.currentDataTask = dataTask;
+    [self.dataTaskkArr addObject:dataTask];
 }
 - (void)md5PostRequestWithSuccess:(void(^)(id response))success failure:(void (^)(NSError * error))failure{
     NSString *originUrl = self.wUrl;
@@ -241,6 +262,7 @@
     }];
     [dataTask resume];
     self.currentDataTask = dataTask;
+    [self.dataTaskkArr addObject:dataTask];
 }
 + (id)responseResultWithData:(NSData *)data responseType:(YJResponseType)type{
     switch (type) {
@@ -410,6 +432,12 @@
                                     @"sign":sign
                                     };
     return md5Params;
+}
+- (NSMutableArray *)dataTaskkArr{
+    if (!_dataTaskkArr) {
+        _dataTaskkArr = [NSMutableArray array];
+    }
+    return _dataTaskkArr;
 }
 - (NSString *)cachePath{
     NSString *filePath = [NSString stringWithFormat:@"%@/Library/YJCache/",NSHomeDirectory()];

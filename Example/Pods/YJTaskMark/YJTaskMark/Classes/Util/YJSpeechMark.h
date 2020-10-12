@@ -9,14 +9,6 @@
 #ifndef YJSpeechMark_h
 #define YJSpeechMark_h
 
-#import "KYPlayer.h"
-#import "KYRecorder.h"
-#import "KYWavHeader.h"
-#import "KYStartEngineConfig.h"
-#import "KYTestConfig.h"
-#import "KYTestEngine.h"
-#include "skegn.h"
-
 #import "YJSpeechManager.h"
-
+#import "YJSpeechFileManager.h"
 #endif /* YJSpeechMark_h */

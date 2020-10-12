@@ -17,18 +17,22 @@ typedef NS_ENUM(NSInteger,YJSpeechMarkType) {
     YJSpeechMarkTypeWord,
     // 句子
     YJSpeechMarkTypeSen,
-    // 英文自由识别
-    YJSpeechMarkTypeASR,
     // 段落
-    YJSpeechMarkTypeParagraph
+    YJSpeechMarkTypeParagraph,
+    // 英文识别
+    YJSpeechMarkTypeASR,
+    // 中文识别
+    YJSpeechMarkTypeChineseASR,
+    // 本地英文音频识别
+    YJSpeechMarkTypeLocalEnASR,
+    // 本地中文音频识别
+    YJSpeechMarkTypeLocalCnASR
 };
 
 
 
 @interface YJSpeechManager : NSObject
 
-/** 评测超时时间 默认15s*/
-@property (nonatomic,assign) NSTimeInterval markTimeout;
 
 + (YJSpeechManager *)defaultManager;
 
@@ -40,6 +44,8 @@ typedef NS_ENUM(NSInteger,YJSpeechMarkType) {
 /** 初始化引擎 */
 - (void)initEngine;
 - (BOOL)isInitEngine;
+/** 进行授权 */
+- (void)getWarrntIdAuth;
 /** 初始化结果 */
 - (void)initResult:(void (^) (BOOL success))resultBlock;
 
@@ -60,13 +66,11 @@ typedef NS_ENUM(NSInteger,YJSpeechMarkType) {
 /** 取消录音 */
 - (void)cancelEngine;
 
-/** 录音回放 */
-- (void)playback;
-
 /** 删除引擎 */
 - (void)deleteEngine;
 
-
+/** 开始评测回调 */
+- (void)speechEngineStartBLock:(void (^) (void))startBlock;
 /** 评测结果 */
 - (void)speechEngineResult:(void (^) (YJSpeechResultModel *resultModel))resultBlock;
 /** 音强 */

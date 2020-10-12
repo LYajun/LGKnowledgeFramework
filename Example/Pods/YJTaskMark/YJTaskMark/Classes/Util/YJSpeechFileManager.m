@@ -21,10 +21,10 @@
     return macro;
 }
 - (NSString *)speechRecordDir{
-    NSString *recordDir = [NSString stringWithFormat:@"%@/Documents/record",NSHomeDirectory()];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:recordDir]) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:recordDir withIntermediateDirectories:YES attributes:nil error:nil];
-    }
+    NSString *recordDir = [NSString stringWithFormat:@"%@/Documents/ssrecord",NSHomeDirectory()];
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:recordDir]) {
+//        [[NSFileManager defaultManager] createDirectoryAtPath:recordDir withIntermediateDirectories:YES attributes:nil error:nil];
+//    }
     return recordDir;
 }
 - (NSArray<YJSpeechResModel *> *)speechRecordURLAssets{

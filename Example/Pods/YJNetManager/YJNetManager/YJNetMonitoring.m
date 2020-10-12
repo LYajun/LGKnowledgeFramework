@@ -10,7 +10,7 @@
 #import <Reachability/Reachability.h>
 
 
-#define kYJNetMonitoringUrlToCheckNetStatus @"http://www.stkouyu.com/"
+#define kYJNetMonitoringUrlToCheckNetStatus @"http://api.cloud.ssapi.cn:8080/auth/authorize"
 @interface YJNetMonitoring ()
 @property (nonatomic) Reachability *hostReachability;
 @end
@@ -78,18 +78,18 @@
             }
             NSLog(@"手机无法访问互联网");
         }else{
-            NSString* result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            //解析html页面
-            NSString *htmlString = [weakSelf filterHTML:result];
-            //除掉换行符
-            NSString *resultString = [htmlString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-            if ([resultString containsString:@"声通"]) {
+//            NSString* result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//            //解析html页面
+//            NSString *htmlString = [weakSelf filterHTML:result];
+//            //除掉换行符
+//            NSString *resultString = [htmlString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//            if ([resultString containsString:@"声通"]) {
                 weakSelf.networkCanUseState = 1;
                 NSLog(@"手机所连接的网络是可以访问互联网的");
-            }else {
-                weakSelf.networkCanUseState = 2;
-                NSLog(@"手机无法访问互联网");
-            }
+//            }else {
+//                weakSelf.networkCanUseState = 2;
+//                NSLog(@"手机无法访问互联网");
+//            }
             if (complete) {
                 complete();
             }

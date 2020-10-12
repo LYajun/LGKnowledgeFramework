@@ -11,6 +11,8 @@
 @interface YJSpeechResultModel : NSObject
 /** 编号 */
 @property (nonatomic,copy) NSString *speechID;
+/** 音频文件识别的音频路径 */
+@property (nonatomic,copy) NSString *audioPath;
 /** 总分 */
 @property (nonatomic,assign) float totalScore;
 /** 发音得分 */
@@ -35,10 +37,8 @@
 /** 句子得分 - 段落 */
 @property (nonatomic,strong) NSArray *sentences;
 
-/** 识别结果 - 英文自由识别 */
+/** 识别结果 - 自由识别 */
 @property (nonatomic,copy) NSString *recognition;
-/** 识别出来的置信度, 0~100 - 英文自由识别 */
-@property (nonatomic,assign) NSInteger confidence;
 
 /** 是否出错 */
 @property (nonatomic,assign) BOOL isError;

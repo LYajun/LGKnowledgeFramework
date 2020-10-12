@@ -25,6 +25,7 @@
 /** 语音评测源文件存放名称 */
 - (NSArray *)speechRecordFileNames;
 
+- (YJSpeechResModel *)parseVoiceFileAtPath:(NSString *) filePath;
 /** 根据录音文件路径删除录音文件 */
 - (void)removeRecordFileAtPath:(NSString *) path
                       complete:(void (^) (BOOL success))complete;
